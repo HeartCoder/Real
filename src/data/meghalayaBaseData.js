@@ -110,10 +110,10 @@ const baseDestinations = [
     duration: "2 Days / 1 Night",
     bestTime: "October to March",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/4bd73408677d81.jpg", alt: "Boats on the crystal clear Umngot River, Dawki", text: "Boats appearing to float in mid-air on the transparent waters of the Umngot River." },
-      { id: 2, url: "https://images.unsplash.com/photo-1620570624050-968005859398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGF3a2klMjBicmlkZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Suspension bridge over Umngot River, Dawki", text: "The suspension bridge connecting India and Bangladesh near Dawki." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605664042008-9f891009091e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRhd2tpJTIwcml2ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "View of the riverbed through clear water in Dawki", text: "A mesmerizing view of the riverbed visible through the crystal clear waters." },
-      { id: 4, url: "https://images.unsplash.com/photo-1619785607991-675494f80148?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRhd2tpJTIwbG9jYWwlMjBsaWZlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", alt: "Local life near Dawki river", text: "Locals engaging in daily activities along the banks of the Umngot River." },
+      { id: 1, url: "/images/dawkiriver.jpeg", alt: "Boats on the crystal clear Umngot River, Dawki", text: "Boats appearing to float in mid-air on the transparent waters of the Umngot River." },
+      { id: 2, url: "/images/dawki3.jpeg", alt: "Suspension bridge over Umngot River, Dawki", text: "The suspension bridge connecting India and Bangladesh near Dawki." },
+      { id: 3, url: "/images/dawki.jpeg", alt: "View of the riverbed through clear water in Dawki", text: "A mesmerizing view of the riverbed visible through the crystal clear waters." },
+      { id: 4, url: "/images/dawki2.jpeg", alt: "Local life near Dawki river", text: "Locals engaging in daily activities along the banks of the Umngot River." },
     ],
     itinerary: {
       source: "Guwahati",
@@ -150,10 +150,10 @@ const baseDestinations = [
     duration: "1 Day (often combined with Dawki)",
     bestTime: "Year-round",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/d63a95f696e4b875a8c1514ae90c5979.jpg", alt: "Welcome to Mawlynnong sign", text: "The welcome sign to Mawlynnong, Asia's Cleanest Village." },
-      { id: 2, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vdCUyMGJyaWRnZSUyMG1hd2x5bm5vbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Living Root Bridge near Mawlynnong", text: "A single living root bridge near Mawlynnong, showcasing Khasi ingenuity." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2t5JTIwd2FsayUyMG1hd2x5bm5vbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Sky Walk (bamboo watchtower) in Mawlynnong", text: "The Sky Walk, a bamboo watchtower offering panoramic views of the village and Bangladesh plains." },
-      { id: 4, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2hhc2klMjBob3VzZSUyMG1hd2x5bm5vbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Traditional Khasi house in Mawlynnong", text: "A beautifully maintained traditional Khasi house with a blooming garden." },
+      { id: 1, url: "/images/welcomemaw.jpeg", alt: "Welcome to Mawlynnong sign", text: "The welcome sign to Mawlynnong, Asia's Cleanest Village." },
+      { id: 2, url: "/images/livingrootbridge.jpg", alt: "Living Root Bridge near Mawlynnong", text: "A single living root bridge near Mawlynnong, showcasing Khasi ingenuity." },
+      { id: 3, url: "/images/scenemaw.jpeg", alt: "Sky Walk (bamboo watchtower) in Mawlynnong", text: "The Sky Walk, a bamboo watchtower offering panoramic views of the village and Bangladesh plains." },
+      { id: 4, url: "/images/khasimaw.jpeg", alt: "Traditional Khasi house in Mawlynnong", text: "A beautifully maintained traditional Khasi house with a blooming garden." },
     ],
     itinerary: {
       source: "Guwahati",
