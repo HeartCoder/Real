@@ -9,7 +9,7 @@ const DestinationsHero = () => {
         <img 
           className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out"
           alt="Panoramic view of North East India mountains and valleys with a misty atmosphere"
-          src="https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/2bc195808b66a2c0f6136806545a269c.jpg" 
+          src="/images/DestinationHero.jpg" 
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-sky-900/50 to-emerald-700/30 z-10"></div>
       </div>
