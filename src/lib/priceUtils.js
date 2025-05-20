@@ -1,8 +1,6 @@
-
 export const formatPriceRange = (min, max) => {
   const roundedMin = Math.round(min);
   const roundedMax = max ? Math.round(max) : null;
-  
   if (roundedMax && roundedMin !== roundedMax) {
     return `₹${roundedMin.toLocaleString()} - ₹${roundedMax.toLocaleString()}`;
   }
@@ -10,51 +8,29 @@ export const formatPriceRange = (min, max) => {
 };
 
 export const getNewPriceDetails = (durationString, id, priceData) => {
-  let days = 0;
+  let days = 0, nights = 0;
   if (durationString) {
-    const match = durationString.match(/(\d+)-?(\d*)\s*days?/i);
-    if (match) {
-      days = parseInt(match[1], 10);
-      if (match[2]) {
-        days = (parseInt(match[1], 10) + parseInt(match[2], 10)) / 2;
-      }
-    } else {
-      const nightsMatch = durationString.match(/(\d+)\s*Nights/i);
-      if (nightsMatch) {
-        days = parseInt(nightsMatch[1], 10) + 1;
-      }
-    }
+    const dayMatch = durationString.match(/(\d+)\s*days?/i);
+    const nightMatch = durationString.match(/(\d+)\s*nights?/i);
+    days = dayMatch ? parseInt(dayMatch[1], 10) : 0;
+    nights = nightMatch ? parseInt(nightMatch[1], 10) : 0;
+    // If only nights are mentioned, assume days = nights + 1
+    if (!days && nights) days = nights + 1;
+    // If only days are mentioned and nights not, assume nights = days - 1
+    if (days && !nights) nights = Math.max(0, days - 1);
   }
 
-  let baseMin = 0, baseMax = 0;
+  // New logic: min = car + itinerary, max = car + itinerary + accommodation
+  const carTravelCharge = days * 3000;
+  const itineraryCost = days * 500;
+  const accommodationCharge = nights * 2500;
 
-  if (id === "meghalaya-kaziranga-explorer") {
-    baseMin = priceData?.originalPrice || 32000; 
-    baseMax = priceData?.originalPrice || 32000;
-  } else if (days <= 3) {
-    baseMin = 4000; baseMax = 7000;
-  } else if (days <= 5) {
-    baseMin = 7000; baseMax = 15000;
-  } else if (days <= 7) {
-    baseMin = 15000; baseMax = 30000;
-  } else if (days <= 10) {
-    baseMin = 30000; baseMax = 60000;
-  } else {
-    baseMin = 30000; baseMax = 60000; 
-  }
-  
-  const previousDiscountedMin = baseMin * 0.75;
-  const previousDiscountedMax = baseMax * 0.75;
+  const minPrice = carTravelCharge + itineraryCost;
+  const maxPrice = carTravelCharge + itineraryCost + accommodationCharge;
 
-  const newMinPrice = previousDiscountedMin * 1.20;
-  const newMaxPrice = previousDiscountedMax * 1.20;
-  
-  const originalMinForDisplay = baseMin;
-  const originalMaxForDisplay = baseMax;
-
-
+  // Return in the old format for compatibility
   return {
-    original: formatPriceRange(originalMinForDisplay, originalMaxForDisplay),
-    discounted: formatPriceRange(newMinPrice, newMaxPrice),
+    original: formatPriceRange(minPrice, maxPrice),
+    discounted: formatPriceRange(minPrice, maxPrice)
   };
 };
