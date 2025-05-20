@@ -23,10 +23,10 @@ const servicesData = {
       "24/7 customer support for on-road assistance"
     ],
     images: [
-      { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/fd3312e2f6849c8fb56be4e97e6fad25.jpg", alt: "Comfortable SUV for North East tours" },
-      { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/04ae3475122eee8b7111419b22af6abb.jpg", alt: "Spacious Innova car covered in snow" },
-      { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/42ce93e21235eb11fab77297a4f0e86c.jpg", alt: "White Innova car parked outdoors" },
-      { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/802089dd6a654fa71c56e04a888ace1c.jpg", alt: "White Innova car covered in snow, different angle" },
+      { src: "/images/CarRental1.jpg", alt: "Comfortable SUV for North East tours" },
+      { src: "/images/CarRental2.jpg", alt: "Spacious Innova car covered in snow" },
+      { src: "/images/CarRental1.jpg", alt: "White Innova car parked outdoors" },
+      { src: "/images/CarRental2.jpg", alt: "White Innova car covered in snow, different angle" },
     ],
     icon: <Car className="h-12 w-12 text-primary" />
   },
@@ -44,9 +44,9 @@ const servicesData = {
       "Flexible and customizable itineraries"
     ],
     images: [
-      { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/cbe05a1e7441296d1399a3721d8685bf.jpg", alt: "Group of tourists enjoying a scenic view in Ziro Valley" },
-      { src: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwZ3JvdXB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", alt: "Happy travelers on an adventure tour" },
-      { src: "https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9ydGglMjBlYXN0JTIwaW5kaWElMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", alt: "Breathtaking landscape of North East India" }
+      { src: "/images/Homebackground1.jpg", alt: "Group of tourists enjoying a scenic view in Ziro Valley" },
+      { src: "/inages/Homebackground3.jpg", alt: "Happy travelers on an adventure tour" },
+      { src: "/images/AboutNorthEast.jpg", alt: "Breathtaking landscape of North East India" }
     ],
     icon: <Users className="h-12 w-12 text-primary" />
   },
@@ -64,9 +64,9 @@ const servicesData = {
       "Recommendations based on your itinerary and interests"
     ],
     images: [
-      { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/f2c37bd721151ae34498ec3ce04fea1a.jpg", alt: "Cozy homestay in a serene location in Dawki" },
-      { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60", alt: "Luxurious hotel room with a view" },
-      { src: "https://images.unsplash.com/photo-1584132905296-03c03a09566c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJlc29ydCUyMG5vcnRoJTIwZWFzdCUyMGluZGlhfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60", alt: "Eco-friendly resort amidst nature" }
+      { src: "/images/Accomodation.jpg", alt: "Cozy homestay in a serene location in Dawki" },
+      { src: "/images/DestinationsPage.jpg", alt: "Luxurious hotel room with a view" },
+      { src: "/images/DestinationHero.jpg", alt: "Eco-friendly resort amidst nature" }
     ],
     icon: <Hotel className="h-12 w-12 text-primary" />
   }
@@ -168,7 +168,7 @@ const ServicesPage = () => {
           <img 
             className="w-full h-full object-cover"
             alt="Our services banner showing travel elements"
-            src="https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/fc77566a5b4e8d0c9495571c6e4afc4a.jpg"
+            src="/images/umiamlake.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10"></div>
         </div>
