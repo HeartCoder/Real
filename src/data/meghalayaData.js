@@ -15,6 +15,6 @@ const applyNewPrices = (destinations) => {
 };
 
 export const meghalayaDestinations = applyNewPrices([
-  ...meghalayaBaseDestinations,
   meghalayaKazirangaExplorerPackage,
+  ...meghalayaBaseDestinations,
 ]);
