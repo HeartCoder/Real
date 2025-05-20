@@ -6,7 +6,7 @@ const baseAssamDestinations = [
     id: "kaziranga-national-park",
     name: "Kaziranga National Park",
     tagline: "Home of the One-Horned Rhinoceros",
-    description: "A UNESCO World Heritage Site, Kaziranga is famous for its population of the Indian one-horned rhinoceros. It also harbors tigers, elephants, wild water buffalo, and diverse birdlife. Jeep and elephant safaris offer thrilling wildlife encounters. Inclusions: Hotel/Resort, Safaris, Guide, Transfers. Customizable.",
+    description: "A UNESCO World Heritage Site, Kaziranga is famous for its population of the Indian one-horned rhinoceros. It also harbors tigers, elephants, wild water buffalo, and diverse birdlife. Jeep and elephant safaris offer thrilling wildlife encounters. Inclusions: Hotel/Resort, Transfers. Customizable.",
     duration: "3 Days / 2 Nights",
     bestTime: "November to April (Park closed during monsoon)",
     images: [
@@ -52,7 +52,7 @@ const baseAssamDestinations = [
     id: "majuli-island",
     name: "Majuli Island",
     tagline: "World's Largest River Island & Cradle of Vaishnavite Culture",
-    description: "Majuli, nestled in the Brahmaputra River, is the world's largest river island and a center of Assamese Vaishnavite culture. It's known for its Satras (monasteries), mask-making traditions, and serene rural landscapes. Inclusions: Homestay/Guesthouse, Ferry, Local Transport, Guide. Customizable.",
+    description: "Majuli, nestled in the Brahmaputra River, is the world's largest river island and a center of Assamese Vaishnavite culture. It's known for its Satras (monasteries), mask-making traditions, and serene rural landscapes. Inclusions: Homestay/Guesthouse, Ferry, Local Transport. Customizable.",
     duration: "3 Days / 2 Nights",
     bestTime: "October to March",
     images: [
@@ -98,7 +98,7 @@ const baseAssamDestinations = [
     id: "guwahati",
     name: "Guwahati",
     tagline: "Gateway to North East India",
-    description: "Guwahati, the largest city in Assam, serves as the primary gateway to the North East. It's home to the sacred Kamakhya Temple, offers Brahmaputra river cruises, and has several museums and cultural centers. Inclusions: Hotel, Sightseeing, Transfers (local). Customizable.",
+    description: "Guwahati, the largest city in Assam, serves as the primary gateway to the North East. It's home to the sacred Kamakhya Temple, offers Brahmaputra river cruises, and has several museums and cultural centers. Inclusions: Sightseeing, Transfers (local). Customizable.",
     duration: "1 Day / 0 Night",
     bestTime: "Year-round (October to March is pleasant)",
     images: [
@@ -116,6 +116,7 @@ const baseAssamDestinations = [
             "Bhimashankar Dham Jyotirlinga Temple: A jyotirlinga shrine located outside the main city; offers peace and spiritual significance.",
             "Basistha Temple: Surrounded by hills and streams, this temple is associated with sage Basistha and is a calm spot for meditation.",
             "Balaji Temple: A clean and well-maintained temple built in South Indian architectural style.",
+            "Rope Way from Fancy Bazaar ghat to North Guwahati.",
             "Guwahati Zoo (Assam State Zoo and Botanical Garden): Great place to explore Assam's biodiversity and enjoy nature.",
             "Guwahati Science Museum: Interactive displays and fun for kids and adults alike, good for an educational break.",
             "Guwahati Planetarium: Offers a short astronomy show and exhibits on space and planets.",
