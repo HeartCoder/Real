@@ -10,10 +10,10 @@ const baseDestinations = [
     duration: "3 Days / 2 Nights",
     bestTime: "October to May",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/d4a4a3828aa2214cba3aea1001eb7ed5.jpg", alt: "Double Decker Living Root Bridge in Cherrapunji", text: "The iconic Double Decker Living Root Bridge, a marvel of bio-engineering by the Khasi tribes." },
-      { id: 2, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bm9oa2FsaWthaSUyMGZhbGxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", alt: "Nohkalikai Falls, Cherrapunji", text: "Nohkalikai Falls, one of the tallest plunge waterfalls in India, cascading down into a turquoise pool." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWF3c21haSUyMGNhdmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Mawsmai Cave, Cherrapunji", text: "Exploring the illuminated Mawsmai Cave, known for its stalactites and stalagmites." },
-      { id: 4, url: "https://images.unsplash.com/photo-1621675099011-ea333900e8e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2V2ZW4lMjBzaXN0ZXJzJTIwZmFsbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Seven Sisters Falls, Cherrapunji", text: "The majestic Seven Sisters Falls, a seven-segmented waterfall plunging over limestone cliffs." },
+      { id: 1, url: "/images/doubledecker.jpg", alt: "Double Decker Living Root Bridge in Cherrapunji", text: "The iconic Double Decker Living Root Bridge, a marvel of bio-engineering by the Khasi tribes." },
+      { id: 2, url: "/images/nohkolikai.jpeg", alt: "Nohkalikai Falls, Cherrapunji", text: "Nohkalikai Falls, one of the tallest plunge waterfalls in India, cascading down into a turquoise pool." },
+      { id: 3, url: "/images/mawsmaicave.jpg", alt: "Mawsmai Cave, Cherrapunji", text: "Exploring the illuminated Mawsmai Cave, known for its stalactites and stalagmites." },
+      { id: 4, url: "/images/sevensisters.jpeg", alt: "Seven Sisters Falls, Cherrapunji", text: "The majestic Seven Sisters Falls, a seven-segmented waterfall plunging over limestone cliffs." },
     ],
     itinerary: {
       source: "Guwahati",
@@ -61,10 +61,10 @@ const baseDestinations = [
     duration: "3 Days / 2 Nights",
     bestTime: "Year-round",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/9bf271e7da63c6c8f4200539d26d4396.jpg", alt: "I Love Shillong Sign", text: "A popular 'I Love Shillong' sign in the city center." },
-      { id: 2, url: "https://images.unsplash.com/photo-1594008074989-3560390f0509?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9uJTIwYm9zY28lMjBtdXNldW0lMjBzaGlsbG9uZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Don Bosco Museum, Shillong", text: "The impressive Don Bosco Centre for Indigenous Cultures, showcasing the rich heritage of North East India." },
-      { id: 3, url: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hpbGxvbmclMjBnb2xmJTIwY291cnNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", alt: "Shillong Golf Course", text: "The lush green Shillong Golf Course, one of the oldest and largest natural golf courses in Asia." },
-      { id: 4, url: "https://images.unsplash.com/photo-1605763239300-d52733805167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9saWNlJTIwYmF6YXIlMjBzaGlsbG9uZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Police Bazar, Shillong", text: "A bustling street scene from Police Bazar, the commercial hub of Shillong." },
+      { id: 1, url: "/images/iloveshillong.jpg", alt: "I Love Shillong Sign", text: "A popular 'I Love Shillong' sign in the city center." },
+      { id: 2, url: "/images/donboscoshillong.jpeg", alt: "Don Bosco Museum, Shillong", text: "The impressive Don Bosco Centre for Indigenous Cultures, showcasing the rich heritage of North East India." },
+      { id: 3, url: "/images/golfshillong.jpeg", alt: "Shillong Golf Course", text: "The lush green Shillong Golf Course, one of the oldest and largest natural golf courses in Asia." },
+      { id: 4, url: "/images/Shillong.jpeg", text: "A bustling street scene from Police Bazar, the commercial hub of Shillong." },
     ],
     itinerary: {
       source: "Guwahati",
@@ -110,7 +110,7 @@ const baseDestinations = [
     duration: "2 Days / 1 Night",
     bestTime: "October to March",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/4bd73408677d8142fb0f79f4257cfafd.jpg", alt: "Boats on the crystal clear Umngot River, Dawki", text: "Boats appearing to float in mid-air on the transparent waters of the Umngot River." },
+      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/4bd73408677d81.jpg", alt: "Boats on the crystal clear Umngot River, Dawki", text: "Boats appearing to float in mid-air on the transparent waters of the Umngot River." },
       { id: 2, url: "https://images.unsplash.com/photo-1620570624050-968005859398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGF3a2klMjBicmlkZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Suspension bridge over Umngot River, Dawki", text: "The suspension bridge connecting India and Bangladesh near Dawki." },
       { id: 3, url: "https://images.unsplash.com/photo-1605664042008-9f891009091e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRhd2tpJTIwcml2ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "View of the riverbed through clear water in Dawki", text: "A mesmerizing view of the riverbed visible through the crystal clear waters." },
       { id: 4, url: "https://images.unsplash.com/photo-1619785607991-675494f80148?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRhd2tpJTIwbG9jYWwlMjBsaWZlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", alt: "Local life near Dawki river", text: "Locals engaging in daily activities along the banks of the Umngot River." },
