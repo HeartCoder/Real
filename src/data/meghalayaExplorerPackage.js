@@ -5,17 +5,17 @@ const basePackage = {
   id: "meghalaya-kaziranga-explorer",
   name: "Meghalaya Kaziranga Guwahati Explorer",
   tagline: "Clouds, Culture, Caves & Wildlife Expedition",
-  description: "Embark on an epic 7-day adventure starting from Guwahati. Witness Shillong's colonial charm and Umiam Lake's serenity. Delve into Cherrapunji's misty landscapes, marvel at Elephant Falls, living root bridges, and stunning waterfalls. Experience the thrill of a Kaziranga National Park safari, spotting rhinos and diverse wildlife. This package offers a perfect blend of Meghalaya's natural wonders and Assam's wild heart. Inclusions: Hotel, Breakfast, Sightseeing, Kaziranga Safari, All Transfers. Customizable.",
+  description: "Embark on an epic 7-day adventure starting from Guwahati. Witness Shillong's colonial charm and Umiam Lake's serenity. Delve into Cherrapunji's misty landscapes, marvel at Elephant Falls, living root bridges, and stunning waterfalls. Experience the thrill of a Kaziranga National Park safari, spotting rhinos and diverse wildlife. This package offers a perfect blend of Meghalaya's natural wonders and Assam's wild heart. Inclusions: Hotel, Sightseeing, All Transfers. Customizable.",
   duration: "7 Days / 6 Nights",
   bestTime: "October to April",
   priceData: {
     originalPrice: 32000, 
   },
   images: [
-    { id: 1, url: "/images/Shillong.jpeg", alt: "Shillong City View", text: "Panoramic City view." },
-    { id: 2, url: "/images/doubledecker.jpg", alt: "Double Decker Living Root Bridge, Cherrapunji", text: "Iconic Double Decker Living Root Bridge in Cherrapunji." },
-    { id: 3, url: "/images/kaziranga.jpg", alt: "One-horned Rhinoceros in Kaziranga National Park", text: "Majestic One-horned Rhinoceros in Kaziranga." },
-    { id: 4, url: "/images/umiamlake.jpg", alt: "Umiam Lake (Barapani)", text: "Serene Umiam Lake near Shillong." },
+    { id: 1, url: "/images/Shillong.jpeg", alt: "Shillong City View", text: "" },
+    { id: 2, url: "/images/doubledecker.jpg", alt: "Double Decker Living Root Bridge, Cherrapunji", text: "" },
+    { id: 3, url: "/images/kaziranga.jpg", alt: "One-horned Rhinoceros in Kaziranga National Park", text: "" },
+    { id: 4, url: "/images/umiamlake.jpg", alt: "Umiam Lake (Barapani)", text: "" },
   ],
   itinerary: {
     source: "Guwahati",
