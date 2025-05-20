@@ -10,8 +10,8 @@ const baseAssamDestinations = [
     duration: "3 Days / 2 Nights",
     bestTime: "November to April (Park closed during monsoon)",
     images: [
-      { id: 1, url: "/images/kaziranga.jpg", alt: "One-horned rhinoceros in Kaziranga National Park", text: "One-horned rhinoceroses in a swampy area of Kaziranga National Park." },
-      { id: 2, url: "/images/kaziranga2.jpeg", alt: "Jeep safari in Kaziranga", text: "Tourists enjoying Jeep safari for close encounters with wildlife." },
+      { id: 1, url: "/images/kaziranga.jpg", alt: "One-horned rhinoceros in Kaziranga National Park", text: "" },
+      { id: 2, url: "/images/kaziranga2.jpeg", alt: "Jeep safari in Kaziranga", text: "" },
     ],
     itinerary: {
       source: "Guwahati",
@@ -56,8 +56,8 @@ const baseAssamDestinations = [
     duration: "3 Days / 2 Nights",
     bestTime: "October to March",
     images: [
-      { id: 1, url: "/images/Majuli.jpeg", alt: "View of Majuli Island river bank", text: "A serene view of the river bank at Majuli Island." },
-      { id: 2, url: "/images/Majuli2.jpg", alt: "Traditional Satra (monastery) in Majuli", text: "A traditional Vaishnavite Satra with its unique architecture and serene atmosphere." },
+      { id: 1, url: "/images/Majuli.jpeg", alt: "View of Majuli Island river bank", text: "" },
+      { id: 2, url: "/images/Majuli2.jpg", alt: "Traditional Satra (monastery) in Majuli", text: "" },
     ],
     itinerary: {
       source: "Guwahati (to Jorhat)",
@@ -102,9 +102,9 @@ const baseAssamDestinations = [
     duration: "1 Day / 0 Night",
     bestTime: "Year-round (October to March is pleasant)",
     images: [
-      { id: 1, url: "/images/kamakhyatemple.jpg", alt: "Kamakhya Temple, Guwahati", text: "The revered Kamakhya Temple, a major Shakti Peetha, atop Nilachal Hill." },
-      { id: 2, url: "/images/OurStory.jpg", alt: "Balaji Temple", text:"Balaji Temple" },
-      { id: 3, url: "/images/ropeway.jpeg", alt: "Rope way", text: "Rope way." },
+      { id: 1, url: "/images/kamakhyatemple.jpg", alt: "Kamakhya Temple, Guwahati", text: "" },
+      { id: 2, url: "/images/OurStory.jpg", alt: "Balaji Temple", text:"" },
+      { id: 3, url: "/images/ropeway.jpeg", alt: "Rope way", text: "" },
     ],
     itinerary: {
       source: "Guwahati (Local)",
@@ -137,7 +137,7 @@ const baseAssamDestinations = [
     duration: "2 Days / 1 Night",
     bestTime: "October to March",
     images: [
-      { id: 1, url: "/images/karengghar.jpeg", alt: "Kareng Ghar, Sivasagar", text: "The iconic Kareng Ghar, an Ahom-era royal monument." },
+      { id: 1, url: "/images/karengghar.jpeg", alt: "Kareng Ghar, Sivasagar", text: "" },
       { id: 2, url: "/images/Sivasagar.jpeg", alt: "Ahom Monument, Sivasagar", text: "" },
     ],
     itinerary: {
