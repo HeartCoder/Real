@@ -147,7 +147,7 @@ const baseDestinations = [
     name: "Mawlynnong",
     tagline: "Asia's Cleanest Village",
     description: "Mawlynnong is a picturesque village acclaimed for its cleanliness. It offers a glimpse into sustainable Khasi lifestyle, with beautiful gardens, bamboo dustbins, and a nearby living root bridge. Inclusions: Local Guide, Village Walk, Transfers (if part of a larger tour). Customizable.",
-    duration: "1 Day (often combined with Dawki)",
+    duration: "2 Days/ 1 Night",
     bestTime: "Year-round",
     images: [
       { id: 1, url: "/images/welcomemaw.jpeg", alt: "Welcome to Mawlynnong sign", text: "The welcome sign to Mawlynnong, Asia's Cleanest Village." },
@@ -157,19 +157,28 @@ const baseDestinations = [
     ],
     itinerary: {
       source: "Guwahati",
-      days: [
-        {
-          day: 1,
-          title: "Guwahati to Mawlynnong & Dawki Day Trip",
-          activities: [
-            "Very early morning pickup from Guwahati (around 6 AM).",
-            "Drive to Mawlynnong (approx. 5-6 hours).",
-            "Explore Mawlynnong village, visit the living root bridge and Sky Walk.",
-            "Proceed to Dawki (approx. 1 hour from Mawlynnong).",
-            "Enjoy boating on the Umngot River.",
-            "Late afternoon, start your return journey to Guwahati (approx. 6-7 hours).",
-            "Late evening drop-off in Guwahati."
-          ]
+     days: [
+      {
+        day: 1,
+        title: "Guwahati to Mawlynnong",
+        activities: [
+          "Morning pickup from Guwahati (around 6 AM).",
+          "Drive to Mawlynnong (approx. 5-6 hours).",
+          "Explore Mawlynnong village, visit the living root bridge and Sky Walk.",
+          "Overnight stay in Mawlynnong or nearby guesthouse."
+        ]
+      },
+      {
+        day: 2,
+        title: "Mawlynnong to Dawki & Return",
+        activities: [
+          "Breakfast in Mawlynnong.",
+          "Proceed to Dawki (approx. 1 hour from Mawlynnong).",
+          "Enjoy boating on the Umngot River.",
+          "Optional: Visit Shnongpdeng or nearby attractions.",
+          "After lunch, drive back to Guwahati (approx. 6-7 hours).",
+          "Evening drop-off in Guwahati."
+        ]
         }
       ]
     }
