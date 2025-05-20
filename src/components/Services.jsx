@@ -13,7 +13,7 @@ const services = [
     description: "Choose from our fleet of well-maintained vehicles with experienced drivers who know the region well.",
     icon: <Car className="h-10 w-10 text-primary" />,
     link: "/services#car-rental",
-    imageSlug: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/fd3312e2f6849c8fb56be4e97e6fad25.jpg"
+    imageSlug: "/images/CarRental1.jpg"
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const services = [
     description: "Special packages for groups and individuals with customized itineraries and exclusive experiences.",
     icon: <Users className="h-10 w-10 text-primary" />,
     link: "/services#tour-packages",
-    imageSlug: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/cbe05a1e7441296d1399a3721d8685bf.jpg" 
+    imageSlug: "/images/Homebackground1.jpg" 
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const services = [
     description: "Stay in carefully selected hotels, homestays, and resorts that offer authentic experiences.",
     icon: <Hotel className="h-10 w-10 text-primary" />,
     link: "/services#accommodation",
-    imageSlug: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/f2c37bd721151ae34498ec3ce04fea1a.jpg"
+    imageSlug: "/images/Accomodation.jpg"
   }
 ];
 
