@@ -52,8 +52,8 @@ const DestinationDetailPage = () => {
 
   return (
     <div className="pt-16 md:pt-20 bg-gradient-to-br from-slate-100 via-stone-50 to-gray-100">
-      {/* Image Slider */}
-      <div className="relative h-[65vh] min-h-[400px] md:min-h-[550px] group">
+      {/* Fixed Aspect Ratio Image Slider */}
+      <div className="relative w-full aspect-[16/9] min-h-[300px] bg-black">
         <Carousel
           className="w-full h-full"
           opts={{ loop: destination.images.length > 1 }}
@@ -61,43 +61,45 @@ const DestinationDetailPage = () => {
           <CarouselContent className="h-full">
             {destination.images.map((image, index) => (
               <CarouselItem key={index} className="h-full relative">
-                <img
-                  className="w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all duration-500"
-                  alt={image.alt || `${destination.name} - Image ${index + 1}`}
-                  src={image.url}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-10 left-10 text-white z-10 p-4 max-w-3xl">
-                  {index === 0 && (
-                    <>
-                      <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="text-4xl md:text-6xl font-bold font-volkhov mb-2 shadow-text-md"
-                      >
-                        {destination.name}
-                      </motion.h1>
+                <div className="w-full h-full aspect-[16/9] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all duration-500"
+                    alt={image.alt || `${destination.name} - Image ${index + 1}`}
+                    src={image.url}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-10 left-10 text-white z-10 p-4 max-w-3xl">
+                    {index === 0 && (
+                      <>
+                        <motion.h1
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2, duration: 0.6 }}
+                          className="text-4xl md:text-6xl font-bold font-volkhov mb-2 shadow-text-md"
+                        >
+                          {destination.name}
+                        </motion.h1>
+                        <motion.p
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4, duration: 0.6 }}
+                          className="text-lg md:text-xl text-gray-200 shadow-text-sm"
+                        >
+                          {destination.tagline}
+                        </motion.p>
+                      </>
+                    )}
+                    {index > 0 && image.text && (
                       <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                        className="text-lg md:text-xl text-gray-200 shadow-text-sm"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5, duration: 0.6 }}
+                        className="text-sm md:text-base bg-black/30 backdrop-blur-sm p-2 rounded"
                       >
-                        {destination.tagline}
+                        {image.text}
                       </motion.p>
-                    </>
-                  )}
-                  {index > 0 && image.text && (
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5, duration: 0.6 }}
-                      className="text-sm md:text-base bg-black/30 backdrop-blur-sm p-2 rounded"
-                    >
-                      {image.text}
-                    </motion.p>
-                  )}
+                    )}
+                  </div>
                 </div>
               </CarouselItem>
             ))}
@@ -207,7 +209,6 @@ const DestinationDetailPage = () => {
                   </span>
                 </div>
               )}
-              {/* Added the requested two lines below */}
               <div className="flex items-center">
                 <span className="h-5 w-5 mr-3 text-primary font-bold">₹</span>
                 <span className="text-gray-700">
