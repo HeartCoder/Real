@@ -1,12 +1,5 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Form, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
 import { format } from "date-fns";
 
 const BookingForm = () => {
@@ -18,226 +11,190 @@ const BookingForm = () => {
     service: "",
     date: "",
     guests: "",
-    message: "",
+    notes: "",
   });
 
   const [errors, setErrors] = useState({});
+  const primaryPhoneNumber = "8822608900";
+  const countryCode = "+91";
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    if (!formData.destination.trim()) newErrors.destination = "Destination is required";
+    if (!formData.service.trim()) newErrors.service = "Service is required";
+    if (!formData.date.trim()) newErrors.date = "Date is required";
+    if (!formData.guests.trim()) newErrors.guests = "Number of guests is required";
+    return newErrors;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
-    
-    // Clear error when user types
-    if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
-    }
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
-    }
-    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
-    if (!formData.destination) newErrors.destination = "Destination is required";
-    if (!formData.service) newErrors.service = "Service is required";
-    if (!formData.date) newErrors.date = "Date is required";
-    if (!formData.guests) newErrors.guests = "Number of guests is required";
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (validateForm()) {
-      // In a real app, you would send this data to your backend
-      console.log("Form submitted:", formData);
-      
-      // Show success message
-      toast({
-        title: "Booking Request Submitted",
-        description: "We'll contact you shortly to confirm your booking details.",
-        duration: 5000,
-      });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        destination: "",
-        service: "",
-        date: "",
-        guests: "",
-        message: "",
-      });
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
     }
+    setErrors({});
+
+    // Compose WhatsApp message
+    const message = `New Booking Request:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Destination: ${formData.destination}
+Service: ${formData.service}
+Preferred Date: ${formData.date}
+Guests: ${formData.guests}
+Notes: ${formData.notes || "N/A"}`;
+
+    // Open WhatsApp chat
+    const whatsappUrl = `https://wa.me/${countryCode}${primaryPhoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Book Your Adventure</h2>
-            <p className="text-lg text-gray-600">
-              Fill out the form below to start planning your perfect North East India experience.
-            </p>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-lg shadow-lg p-8 booking-form"
+    >
+      <h2 className="text-2xl font-bold mb-4 text-primary">Book Your Experience</h2>
+      <p className="text-lg text-gray-600 mb-6">
+        Fill out the form below to start planning your perfect North East India experience. You’ll be redirected to WhatsApp to complete your booking.
+      </p>
+      <form onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block font-semibold mb-1">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your full name"
+              className="w-full border rounded px-3 py-2"
+            />
+            {errors.name && <div className="text-red-500 text-sm">{errors.name}</div>}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-lg shadow-lg p-8 booking-form"
-          >
-            <Form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <FormItem>
-                  <FormLabel>Full Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                    />
-                  </FormControl>
-                  {errors.name && <FormMessage>{errors.name}</FormMessage>}
-                </FormItem>
-
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Your email address"
-                    />
-                  </FormControl>
-                  {errors.email && <FormMessage>{errors.email}</FormMessage>}
-                </FormItem>
-
-                <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
-                  <FormControl>
-                    <Input
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Your phone number"
-                    />
-                  </FormControl>
-                  {errors.phone && <FormMessage>{errors.phone}</FormMessage>}
-                </FormItem>
-
-                <FormItem>
-                  <FormLabel>Destination</FormLabel>
-                  <FormControl>
-                    <Select
-                      name="destination"
-                      value={formData.destination}
-                      onChange={handleChange}
-                    >
-                      <option value="">Select destination</option>
-                      <option value="meghalaya">Meghalaya</option>
-                      <option value="arunachal">Arunachal Pradesh</option>
-                      <option value="assam">Assam</option>
-                      <option value="multiple">Multiple Destinations</option>
-                    </Select>
-                  </FormControl>
-                  {errors.destination && <FormMessage>{errors.destination}</FormMessage>}
-                </FormItem>
-
-                <FormItem>
-                  <FormLabel>Service Required</FormLabel>
-                  <FormControl>
-                    <Select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                    >
-                      <option value="">Select service</option>
-                      <option value="car-rental">Car Rental</option>
-                      <option value="guided-tour">Guided Tour</option>
-                      <option value="group-package">Group Package</option>
-                      <option value="photography-tour">Photography Tour</option>
-                      <option value="custom">Custom Package</option>
-                    </Select>
-                  </FormControl>
-                  {errors.service && <FormMessage>{errors.service}</FormMessage>}
-                </FormItem>
-
-                <FormItem>
-                  <FormLabel>Preferred Date</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="date"
-                      name="date"
-                      value={formData.date}
-                      onChange={handleChange}
-                      min={format(new Date(), "yyyy-MM-dd")}
-                    />
-                  </FormControl>
-                  {errors.date && <FormMessage>{errors.date}</FormMessage>}
-                </FormItem>
-
-                <FormItem>
-                  <FormLabel>Number of Guests</FormLabel>
-                  <FormControl>
-                    <Select
-                      name="guests"
-                      value={formData.guests}
-                      onChange={handleChange}
-                    >
-                      <option value="">Select number of guests</option>
-                      <option value="1">1 Person</option>
-                      <option value="2">2 People</option>
-                      <option value="3-5">3-5 People</option>
-                      <option value="6-10">6-10 People</option>
-                      <option value="10+">More than 10 People</option>
-                    </Select>
-                  </FormControl>
-                  {errors.guests && <FormMessage>{errors.guests}</FormMessage>}
-                </FormItem>
-              </div>
-
-              <FormItem className="mt-6">
-                <FormLabel>Special Requirements</FormLabel>
-                <FormControl>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about any special requirements or questions you have"
-                    rows={4}
-                  />
-                </FormControl>
-              </FormItem>
-
-              <Button type="submit" className="w-full mt-6 bg-primary hover:bg-primary/90">
-                Submit Booking Request
-              </Button>
-            </Form>
-          </motion.div>
+          <div>
+            <label className="block font-semibold mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your email address"
+              className="w-full border rounded px-3 py-2"
+            />
+            {errors.email && <div className="text-red-500 text-sm">{errors.email}</div>}
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Phone Number</label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Your phone number"
+              className="w-full border rounded px-3 py-2"
+            />
+            {errors.phone && <div className="text-red-500 text-sm">{errors.phone}</div>}
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Destination</label>
+            <select
+              name="destination"
+              value={formData.destination}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2"
+            >
+              <option value="">Select destination</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Multiple">Multiple Destinations</option>
+            </select>
+            {errors.destination && <div className="text-red-500 text-sm">{errors.destination}</div>}
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Service Required</label>
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2"
+            >
+              <option value="">Select service</option>
+              <option value="Car Rental">Car Rental</option>
+              <option value="Guided Tour">Guided Tour</option>
+              <option value="Group Package">Group Package</option>
+              <option value="Photography Tour">Photography Tour</option>
+              <option value="Custom">Custom Package</option>
+            </select>
+            {errors.service && <div className="text-red-500 text-sm">{errors.service}</div>}
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Preferred Date</label>
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              min={format(new Date(), "yyyy-MM-dd")}
+              className="w-full border rounded px-3 py-2"
+            />
+            {errors.date && <div className="text-red-500 text-sm">{errors.date}</div>}
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">Number of Guests</label>
+            <select
+              name="guests"
+              value={formData.guests}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2"
+            >
+              <option value="">Select number</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3-5">3-5</option>
+              <option value="6-10">6-10</option>
+              <option value="10+">10+</option>
+            </select>
+            {errors.guests && <div className="text-red-500 text-sm">{errors.guests}</div>}
+          </div>
+          <div className="md:col-span-2">
+            <label className="block font-semibold mb-1">Additional Notes (optional)</label>
+            <textarea
+              name="notes"
+              value={formData.notes}
+              onChange={handleChange}
+              placeholder="Tell us about your preferences, special requests, etc."
+              className="w-full border rounded px-3 py-2"
+              rows={3}
+            />
+          </div>
         </div>
-      </div>
-    </section>
+        <button
+          type="submit"
+          className="mt-8 w-full bg-primary text-white font-bold py-3 rounded hover:bg-primary/90 transition-colors"
+        >
+          Book via WhatsApp
+        </button>
+      </form>
+    </motion.div>
   );
 };
 
