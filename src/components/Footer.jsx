@@ -5,7 +5,7 @@ import { Facebook, Instagram, Twitter, Linkedin, Youtube, MapPin, Phone, Mail } 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const emailAddress = "namastenortheast2000@gmail.com";
+  const emailAddress = "booking@namastenortheast.in";
   const primaryPhoneNumber = "+91 88226 08900";
   const secondaryPhoneNumber = "+91 70869 36300";
 
