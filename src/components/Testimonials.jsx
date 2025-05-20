@@ -23,7 +23,7 @@ const testimonialsData = [
   },
   {
     id: 3,
-    name: "Shreyas Gogoi",
+    name: "Sanjib Gogoi",
     location: "Guwahati",
     rating: 5,
     text: "As a photographer, the Dawki River tour arranged by Namaste North East was perfect. Crystal clear waters and amazing landscapes. The team went above and beyond to ensure I got the best shots.",
