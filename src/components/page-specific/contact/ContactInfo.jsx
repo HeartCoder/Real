@@ -19,8 +19,8 @@ const ContactInfo = () => {
   const mailLink = `mailto:${emailAddress}`;
 
   const contactDetails = [
-    { icon: <MapPin className="h-6 w-6 text-primary" />, title: "Our Location", lines: ["Jalukbari, Guwahati, Assam 781013"] },
-    { 
+    { icon: <MapPin className="h-6 w-6 text-primary" />, title: "Our Location", lines: [{ text: "Jalukbari, Guwahati, Assam 781013" }] },   
+ { 
       icon: <Phone className="h-6 w-6 text-primary" />, 
       title: "Call Us", 
       lines: [
