@@ -12,10 +12,10 @@ const basePackage = {
     originalPrice: 32000, 
   },
   images: [
-    { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/9bf271e7da63c6c8f4200539d26d4396.jpg", alt: "Shillong City View", text: "Panoramic view of Shillong city." },
-    { id: 2, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/d4a4a3828aa2214cba3aea1001eb7ed5.jpg", alt: "Double Decker Living Root Bridge, Cherrapunji", text: "Iconic Double Decker Living Root Bridge in Cherrapunji." },
-    { id: 3, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/c507eeac7beace3abaa4c7767275caf7.jpg", alt: "One-horned Rhinoceros in Kaziranga National Park", text: "Majestic One-horned Rhinoceros in Kaziranga." },
-    { id: 4, url: "https://images.unsplash.com/photo-1605763239300-d52733805167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9saWNlJTIwYmF6YXIlMjBzaGlsbG9uZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Umiam Lake (Barapani)", text: "Serene Umiam Lake near Shillong." },
+    { id: 1, url: "/images/Shillong.jpeg", alt: "Shillong City View", text: "Panoramic City view." },
+    { id: 2, url: "/images/doubledecker.jpg", alt: "Double Decker Living Root Bridge, Cherrapunji", text: "Iconic Double Decker Living Root Bridge in Cherrapunji." },
+    { id: 3, url: "/images/kaziranga.jpg", alt: "One-horned Rhinoceros in Kaziranga National Park", text: "Majestic One-horned Rhinoceros in Kaziranga." },
+    { id: 4, url: "/images/umiamlake.jpg", alt: "Umiam Lake (Barapani)", text: "Serene Umiam Lake near Shillong." },
   ],
   itinerary: {
     source: "Guwahati",
