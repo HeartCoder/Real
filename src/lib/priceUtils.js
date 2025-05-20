@@ -20,10 +20,10 @@ export const getNewPriceDetails = (durationString, id, priceData) => {
     if (days && !nights) nights = Math.max(0, days - 1);
   }
 
-  // New logic: min = car + itinerary, max = car + itinerary + accommodation
-  const carTravelCharge = days * 3000;
+  // Updated logic: min = car + itinerary, max = car + itinerary + accommodation
+  const carTravelCharge = days * 4000;         // changed 3000 → 4000
   const itineraryCost = days * 500;
-  const accommodationCharge = nights * 2500;
+  const accommodationCharge = nights * 3500;   // changed 2500 → 3500
 
   const minPrice = carTravelCharge + itineraryCost;
   const maxPrice = carTravelCharge + itineraryCost + accommodationCharge;
