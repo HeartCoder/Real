@@ -11,7 +11,7 @@ const ContactInfo = () => {
   const numericPhoneNumberPrimary = primaryPhoneNumber.replace(/\s/g, '');
   const numericPhoneNumberSecondary = secondaryPhoneNumber.replace(/\s/g, '');
 
-  const emailAddress = "namastenortheast2000@gmail.com";
+  const emailAddress = "booking@namastenortheast.in";
 
   const whatsappLink = `https://wa.me/${countryCode}${numericPhoneNumberPrimary}?text=Hello%2C%20I'm%20interested%20in%20your%20services.`;
   const callLinkPrimary = `tel:${countryCode}${numericPhoneNumberPrimary}`;
