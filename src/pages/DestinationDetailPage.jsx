@@ -52,21 +52,21 @@ const DestinationDetailPage = () => {
 
   return (
     <div className="pt-16 md:pt-20 bg-gradient-to-br from-slate-100 via-stone-50 to-gray-100">
-      {/* Fixed Image Slider */}
-      <div className="relative flex items-center justify-center min-h-[400px] md:min-h-[550px] bg-black">
-        <Carousel className="w-full max-w-4xl mx-auto" opts={{ loop: destination.images.length > 1 }}>
-          <CarouselContent>
+      {/* Image Slider */}
+      <div className="relative h-[65vh] min-h-[400px] md:min-h-[550px] group">
+        <Carousel
+          className="w-full h-full"
+          opts={{ loop: destination.images.length > 1 }}
+        >
+          <CarouselContent className="h-full">
             {destination.images.map((image, index) => (
-              <CarouselItem
-                key={index}
-                className="flex justify-center items-center relative"
-              >
+              <CarouselItem key={index} className="h-full relative">
                 <img
-                  className="w-80 h-80 md:w-[28rem] md:h-[28rem] object-cover rounded-xl shadow-xl brightness-90 transition-all duration-500"
+                  className="w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all duration-500"
                   alt={image.alt || `${destination.name} - Image ${index + 1}`}
                   src={image.url}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-10 left-10 text-white z-10 p-4 max-w-3xl">
                   {index === 0 && (
                     <>
@@ -184,38 +184,42 @@ const DestinationDetailPage = () => {
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-3 text-primary" />
                 <span className="text-gray-700">
-                  State:{" "}
-                  <span className="font-medium">
-                    {stateKey.charAt(0).toUpperCase() + stateKey.slice(1)}
-                  </span>
+                  State: <span className="font-medium">{stateKey.charAt(0).toUpperCase() + stateKey.slice(1)}</span>
                 </span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-5 w-5 mr-3 text-primary" />
                 <span className="text-gray-700">
-                  Duration:{" "}
-                  <span className="font-medium">{durationDisplay}</span>
+                  Duration: <span className="font-medium">{durationDisplay}</span>
                 </span>
               </div>
               <div className="flex items-center">
                 <CalendarDays className="h-5 w-5 mr-3 text-primary" />
                 <span className="text-gray-700">
-                  Best Time:{" "}
-                  <span className="font-medium">{destination.bestTime}</span>
+                  Best Time: <span className="font-medium">{destination.bestTime}</span>
                 </span>
               </div>
-              {destination.itinerary &&
-                destination.itinerary.source !== "Guwahati (Local)" && (
-                  <div className="flex items-center">
-                    <Users className="h-5 w-5 mr-3 text-primary" />
-                    <span className="text-gray-700">
-                      Starts From:{" "}
-                      <span className="font-medium">
-                        {destination.itinerary.source}
-                      </span>
-                    </span>
-                  </div>
-                )}
+              {destination.itinerary && destination.itinerary.source !== "Guwahati (Local)" && (
+                <div className="flex items-center">
+                  <Users className="h-5 w-5 mr-3 text-primary" />
+                  <span className="text-gray-700">
+                    Starts From: <span className="font-medium">{destination.itinerary.source}</span>
+                  </span>
+                </div>
+              )}
+              {/* Added the requested two lines below */}
+              <div className="flex items-center">
+                <span className="h-5 w-5 mr-3 text-primary font-bold">₹</span>
+                <span className="text-gray-700">
+                  Price: <span className="font-medium">Negotiable</span>
+                </span>
+              </div>
+              <div className="flex items-center">
+                <span className="h-5 w-5 mr-3 text-primary font-bold">*</span>
+                <span className="text-gray-700">
+                  Itinerary: <span className="font-medium">Customizable</span>
+                </span>
+              </div>
             </CardContent>
           </Card>
           <Button
