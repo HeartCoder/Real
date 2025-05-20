@@ -123,7 +123,7 @@ const Footer = () => {
             &copy; {currentYear} Namaste North East. All Rights Reserved.
           </p>
           <p className="text-xs mt-1 text-gray-500">
-            Designed with <span className="text-red-500">&hearts;</span> by Hostinger Horizons
+            Designed with <span className="text-red-500">&hearts;</span> by Turing Development Solutions 
           </p>
         </div>
       </div>
