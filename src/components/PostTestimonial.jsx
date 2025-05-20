@@ -71,10 +71,11 @@ Testimonial: ${text}`;
             Your stories inspire us and fellow travelers. We'd love to hear about your journey with Namaste North East!
           </motion.p>
         </div>
-
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <Card className="max-w-2xl mx-auto shadow-2xl rounded-xl border border-primary/20 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-primary/10 via-emerald-500/5 to-teal-500/5 p-6">
