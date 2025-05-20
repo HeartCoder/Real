@@ -10,10 +10,8 @@ const baseAssamDestinations = [
     duration: "3 Days / 2 Nights",
     bestTime: "November to April (Park closed during monsoon)",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/c507eeac7beace3abaa4c7767275caf7.jpg", alt: "One-horned rhinoceros in Kaziranga National Park", text: "One-horned rhinoceroses in a swampy area of Kaziranga National Park." },
-      { id: 2, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Elephant safari in Kaziranga", text: "Tourists enjoying an elephant safari for close encounters with wildlife." },
-      { id: 3, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Wild water buffalo in Kaziranga", text: "A herd of wild water buffalo in their natural habitat within the park." },
-      { id: 4, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Diverse birdlife in Kaziranga", text: "Colorful migratory birds flocking to the wetlands of Kaziranga." },
+      { id: 1, url: "/images/kaziranga.jpg", alt: "One-horned rhinoceros in Kaziranga National Park", text: "One-horned rhinoceroses in a swampy area of Kaziranga National Park." },
+      { id: 2, url: "/images/kaziranga2.jpeg", alt: "Jeep safari in Kaziranga", text: "Tourists enjoying Jeep safari for close encounters with wildlife." },
     ],
     itinerary: {
       source: "Guwahati",
@@ -58,10 +56,8 @@ const baseAssamDestinations = [
     duration: "3 Days / 2 Nights",
     bestTime: "October to March",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/5f95556e235a02f5423efe9f50c9539b.jpg", alt: "View of Majuli Island river bank", text: "A serene view of the river bank at Majuli Island." },
-      { id: 2, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Traditional Satra (monastery) in Majuli", text: "A traditional Vaishnavite Satra with its unique architecture and serene atmosphere." },
-      { id: 3, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Mask-making artisan in Majuli", text: "An artisan crafting intricate traditional masks used in Bhaona performances." },
-      { id: 4, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Rural landscape with stilt houses in Majuli", text: "Typical rural scenery in Majuli with traditional stilt houses and lush greenery." },
+      { id: 1, url: "/images/Majuli.jpeg", alt: "View of Majuli Island river bank", text: "A serene view of the river bank at Majuli Island." },
+      { id: 2, url: "/images/Majuli2.jpg", alt: "Traditional Satra (monastery) in Majuli", text: "A traditional Vaishnavite Satra with its unique architecture and serene atmosphere." },
     ],
     itinerary: {
       source: "Guwahati (to Jorhat)",
@@ -106,10 +102,9 @@ const baseAssamDestinations = [
     duration: "1 Day / 0 Night",
     bestTime: "Year-round (October to March is pleasant)",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/38ca2f376f8bbcad3d6c9a110f87221e.jpg", alt: "Kamakhya Temple, Guwahati", text: "The revered Kamakhya Temple, a major Shakti Peetha, atop Nilachal Hill." },
-      { id: 2, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Brahmaputra River cruise in Guwahati", text: "Enjoying a scenic sunset cruise on the mighty Brahmaputra River." },
-      { id: 3, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Umananda Temple on Peacock Island, Guwahati", text: "The Umananda Temple, dedicated to Lord Shiva, located on Peacock Island in the Brahmaputra." },
-      { id: 4, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Assam State Museum, Guwahati", text: "The Assam State Museum, showcasing the rich history and culture of the region." },
+      { id: 1, url: "/images/kamakhyatemple.jpg", alt: "Kamakhya Temple, Guwahati", text: "The revered Kamakhya Temple, a major Shakti Peetha, atop Nilachal Hill." },
+      { id: 2, url: "/images/OurStory.jpg", alt: "Balaji Temple", text:"Balaji Temple" },
+      { id: 3, url: "/images/ropeway.jpeg", alt: "Rope way", text: "Rope way." },
     ],
     itinerary: {
       source: "Guwahati (Local)",
@@ -141,10 +136,8 @@ const baseAssamDestinations = [
     duration: "2 Days / 1 Night",
     bestTime: "October to March",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/15a65f218b6a89fe2d494ffb02a8522b.jpg", alt: "Rang Ghar, Sivasagar", text: "The iconic Rang Ghar, an Ahom-era royal sports pavilion, often called the 'Colosseum of the East'." },
-      { id: 2, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Talatal Ghar, Sivasagar", text: "Talatal Ghar, an Ahom palace known for its unique architecture and secret tunnels." },
-      { id: 3, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Sivadol Temple on the banks of Sivasagar Tank", text: "The Sivadol Temple, one of the tallest Shiva temples in India, on the banks of the Sivasagar tank." },
-      { id: 4, url: "https://images.unsplash.com/photo-1581326002021-ba3f4abd127e", alt: "Joysagar Tank, Sivasagar", text: "The vast Joysagar Tank, one of the largest man-made tanks, with temples on its banks." },
+      { id: 1, url: "/images/karengghar.jpeg", alt: "Kareng Ghar, Sivasagar", text: "The iconic Kareng Ghar, an Ahom-era royal monument." },
+      { id: 2, url: "/images/Sivasagar.jpeg", alt: "Ahom Monument, Sivasagar", text: "" },
     ],
     itinerary: {
       source: "Guwahati (to Sivasagar/Jorhat)",
