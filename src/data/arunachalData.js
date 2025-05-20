@@ -10,10 +10,9 @@ const baseArunachalDestinations = [
     duration: "6 Days / 5 Nights",
     bestTime: "September to October, March to June",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/5b9054aafa87ba20a9eb3c2f72756138.jpg", alt: "Tawang Monastery overlooking the valley", text: "The majestic Tawang Monastery, perched atop a hill, offering panoramic views." },
-      { id: 2, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VsYSUyMHBhc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Sela Pass gateway with colorful prayer flags", text: "The iconic Sela Pass gateway adorned with vibrant Buddhist prayer flags, at an altitude of 13,700 ft." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFkaHVyaSUyMGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Shonga-tser Lake (Madhuri Lake)", text: "The serene Shonga-tser Lake, famously known as Madhuri Lake, surrounded by picturesque mountains." },
-      { id: 4, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGF3YW5nJTIwd2FyJTIwbWVtb3JpYWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Tawang War Memorial", text: "The Tawang War Memorial, commemorating the soldiers of the 1962 Sino-Indian War." },
+      { id: 1, url: "/images/Tawang.jpeg", alt: "Tawang Monastery overlooking the valley", text: "" },
+      { id: 2, url: "/images/selapass.jpeg", alt: "Sela Pass ", text: "" },
+      { id: 3, url: "warmemorial.jpeg", alt: "Tawang War Memorial", text: "The Tawang War Memorial, commemorating the soldiers of the 1962 Sino-Indian War." },
     ],
     itinerary: {
       source: "Guwahati/Tezpur",
@@ -85,10 +84,7 @@ const baseArunachalDestinations = [
     duration: "4 Days / 3 Nights",
     bestTime: "March to October (Music festival in September)",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/06d7c0128eb2277fd5655a00a3d3f86e.jpg", alt: "Paddy fields in Ziro Valley with Apatani village", text: "Expansive green paddy fields with traditional Apatani villages in the background." },
-      { id: 2, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXBhdGFuaSUyMHRyaWJlJTIwemlyb3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Apatani tribal women with traditional facial tattoos and nose plugs", text: "Apatani tribal women showcasing their distinctive traditional facial tattoos and nose plugs." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8emlybyUyMG11c2ljJTIwZmVzdGl2YWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Crowd at Ziro Music Festival", text: "A vibrant crowd enjoying performances at the Ziro Music Festival." },
-      { id: 4, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGFsZXklMjB2YWxsZXklMjB3aWxkbGlmZSUyMHNhbmN0dWFyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Scenic view of Talley Valley Wildlife Sanctuary near Ziro", text: "A breathtaking view of the diverse flora in Talley Valley Wildlife Sanctuary." },
+      { id: 1, url: "ziro.jpeg", alt: "Paddy fields in Ziro Valley with Apatani village", text: "Expansive green paddy fields with traditional Apatani villages in the background." },
     ],
     itinerary: {
       source: "Guwahati (to North Lakhimpur/Naharlagun)",
@@ -144,10 +140,8 @@ const baseArunachalDestinations = [
     duration: "2 Days / 1 Night",
     bestTime: "September to October, March to June",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/45352e7593c05a230fb4ec354cfcd24d.jpg", alt: "Bomdila Monastery with mountains in background", text: "The serene Bomdila Monastery set against a backdrop of majestic mountains." },
-      { id: 2, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym9tZGlsYSUyMHZpZXdwb2ludHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Panoramic view from Bomdila viewpoint", text: "A stunning panoramic view of the Himalayan ranges from a viewpoint in Bomdila." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBvcmNoYXJkcyUyMGJvbWRpbGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60", alt: "Apple orchards in Bomdila", text: "Lush apple orchards laden with fruit in the Bomdila region." },
-      { id: 4, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9tZGlsYSUyMGNyYWZ0JTIwY2VudHJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", alt: "Local crafts at Bomdila Craft Centre", text: "Traditional crafts and textiles displayed at the Bomdila Craft Centre." },
+      { id: 1, url: "/images/bomdila.jpeg", alt: "Bomdila", yext:"" },
+      { id: 2, url: "/images/bomdila2.jpg, alt: "Panoramic view from Bomdila viewpoint", text: "" },
     ],
     itinerary: {
       source: "Guwahati/Tezpur",
@@ -184,10 +178,7 @@ const baseArunachalDestinations = [
     duration: "5 Days / 4 Nights",
     bestTime: "October to April",
     images: [
-      { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/af808dadf7dbee597ca6946d07d2118c.jpg", alt: "Dense forest canopy in Namdapha National Park", text: "A view of the dense, lush green forest canopy in Namdapha National Park." },
-      { id: 2, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG9vbG9jayUyMGdpYmJvbiUyMG5hbWRhcGhvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", alt: "Hoolock Gibbon in Namdapha", text: "A Hoolock Gibbon, India's only ape species, found in Namdapha." },
-      { id: 3, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmFtZGFwaGElMjByaXZlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Noa-Dihing River flowing through Namdapha", text: "The Noa-Dihing River meandering through the pristine forests of Namdapha." },
-      { id: 4, url: "https://images.unsplash.com/photo-1605287789001-c9866c373918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmFtZGFwaGElMjB0cmVra2luZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60", alt: "Trekkers in Namdapha National Park", text: "Trekkers exploring the rich biodiversity of Namdapha National Park." },
+      { id: 1, url: "namdhapa.jpg", alt: "Dense forest canopy in Namdapha National Park", text: "Namdapha National Park." },
     ],
     itinerary: {
       source: "Guwahati (to Dibrugarh)",
