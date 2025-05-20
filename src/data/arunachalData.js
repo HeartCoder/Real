@@ -174,7 +174,7 @@ const baseArunachalDestinations = [
     id: "namdapha-national-park",
     name: "Namdapha National Park",
     tagline: "Biodiversity Hotspot with Unique Wildlife",
-    description: "Namdapha National Park, a vast expanse of pristine wilderness, is one of India's largest protected areas. It's unique for harboring all four big cat species and the Hoolock Gibbon. Inclusions: Hotel/Camping, Safaris, Guide, Transfers. Customizable.",
+    description: "Namdapha National Park, a vast expanse of pristine wilderness, is one of India's largest protected areas. It's unique for harboring all four big cat species and the Hoolock Gibbon. Inclusions: Hotel/Camping, Transfers. Customizable.",
     duration: "5 Days / 4 Nights",
     bestTime: "October to April",
     images: [
