@@ -9,7 +9,7 @@ const AboutHero = () => {
         <img 
           className="w-full h-full object-cover"
           alt="Namaste North East team in a scenic location"
-         src="OurServices.jpg" />
+         src="/images/OurServices.jpg" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10"></div>
       </div>
       <motion.div
