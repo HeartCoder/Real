@@ -18,7 +18,7 @@ const OurStory = () => {
                 <img 
                   className="w-full h-auto object-cover aspect-video"
                   alt="Scenic view of a temple, representing the cultural journey of Namaste North East"
-                 src="https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/721d56ccaa0c7911e29571ceaa83b820.jpg" />
+                 src="/images/OurStory.jpg" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-primary rounded-lg p-4 shadow-lg hidden md:block">
                 <p className="text-white font-bold text-xl">Est. 2013</p>
