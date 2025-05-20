@@ -140,7 +140,7 @@ const baseArunachalDestinations = [
     duration: "2 Days / 1 Night",
     bestTime: "September to October, March to June",
     images: [
-      { id: 1, url: "/images/bomdila.jpeg", alt: "Bomdila", yext:"" },
+      { id: 1, url: "/images/bomdila.jpeg", alt: "Bomdila", text:"" },
       { id: 2, url: "/images/bomdila2.jpg, alt: "Panoramic view from Bomdila viewpoint", text: "" },
     ],
     itinerary: {
