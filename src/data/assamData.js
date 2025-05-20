@@ -103,7 +103,7 @@ const baseAssamDestinations = [
     name: "Guwahati",
     tagline: "Gateway to North East India",
     description: "Guwahati, the largest city in Assam, serves as the primary gateway to the North East. It's home to the sacred Kamakhya Temple, offers Brahmaputra river cruises, and has several museums and cultural centers. Inclusions: Hotel, Sightseeing, Transfers (local). Customizable.",
-    duration: "2 Days / 1 Night",
+    duration: "1 Day / 0 Night",
     bestTime: "Year-round (October to March is pleasant)",
     images: [
       { id: 1, url: "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/38ca2f376f8bbcad3d6c9a110f87221e.jpg", alt: "Kamakhya Temple, Guwahati", text: "The revered Kamakhya Temple, a major Shakti Peetha, atop Nilachal Hill." },
