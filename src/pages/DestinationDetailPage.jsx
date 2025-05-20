@@ -53,7 +53,7 @@ const DestinationDetailPage = () => {
   return (
     <div className="pt-16 md:pt-20 bg-gradient-to-br from-slate-100 via-stone-50 to-gray-100">
       {/* Fixed Aspect Ratio Image Slider */}
-      <div className="relative w-full aspect-[16/9] min-h-[300px] bg-black">
+      <div className="relative w-full aspect-[16/9] bg-black">
         <Carousel
           className="w-full h-full"
           opts={{ loop: destination.images.length > 1 }}
@@ -61,11 +61,12 @@ const DestinationDetailPage = () => {
           <CarouselContent className="h-full">
             {destination.images.map((image, index) => (
               <CarouselItem key={index} className="h-full relative">
-                <div className="w-full h-full aspect-[16/9] relative">
+                <div className="w-full h-full aspect-[16/9] relative overflow-hidden">
                   <img
-                    className="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all duration-500"
-                    alt={image.alt || `${destination.name} - Image ${index + 1}`}
                     src={image.url}
+                    alt={image.alt || `${destination.name} - Image ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    draggable={false}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                   <div className="absolute bottom-10 left-10 text-white z-10 p-4 max-w-3xl">
@@ -209,6 +210,7 @@ const DestinationDetailPage = () => {
                   </span>
                 </div>
               )}
+              {/* Added the requested two lines below */}
               <div className="flex items-center">
                 <span className="h-5 w-5 mr-3 text-primary font-bold">₹</span>
                 <span className="text-gray-700">
