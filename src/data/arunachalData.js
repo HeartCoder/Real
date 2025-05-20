@@ -12,7 +12,7 @@ const baseArunachalDestinations = [
     images: [
       { id: 1, url: "/images/Tawang.jpeg", alt: "Tawang Monastery overlooking the valley", text: "" },
       { id: 2, url: "/images/selapass.jpeg", alt: "Sela Pass ", text: "" },
-      { id: 3, url: "/images/warmemorial.jpeg", alt: "Tawang War Memorial", text: "The Tawang War Memorial, commemorating the soldiers of the 1962 Sino-Indian War." },
+      { id: 3, url: "/images/warmemorial.jpeg", alt: "Tawang War Memorial", text: "" },
     ],
     itinerary: {
       source: "Guwahati/Tezpur",
@@ -84,7 +84,7 @@ const baseArunachalDestinations = [
     duration: "4 Days / 3 Nights",
     bestTime: "March to October (Music festival in September)",
     images: [
-      { id: 1, url: "/images/ziro.jpeg", alt: "Paddy fields in Ziro Valley with Apatani village", text: "Expansive green paddy fields with traditional Apatani villages in the background." },
+      { id: 1, url: "/images/ziro.jpeg", alt: "Paddy fields in Ziro Valley with Apatani village", text: "" },
     ],
     itinerary: {
       source: "Guwahati (to North Lakhimpur/Naharlagun)",
@@ -178,7 +178,7 @@ const baseArunachalDestinations = [
     duration: "5 Days / 4 Nights",
     bestTime: "October to April",
     images: [
-      { id: 1, url: "/images/namdhapa.jpg", alt: "Dense forest canopy in Namdapha National Park", text: "Namdapha National Park." },
+      { id: 1, url: "/images/namdhapa.jpg", alt: "Dense forest canopy in Namdapha National Park", text: "" },
     ],
     itinerary: {
       source: "Guwahati (to Dibrugarh)",
