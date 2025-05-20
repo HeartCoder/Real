@@ -33,10 +33,9 @@ const DestinationCard = ({ destination, stateKey }) => {
       className="h-full group"
     >
       <Card className="overflow-hidden destination-card h-full flex flex-col bg-white shadow-lg rounded-xl border border-transparent hover:border-primary transition-all duration-300 ease-in-out transform hover:shadow-2xl">
-        {/* Fixed image size and cropping */}
-        <div className="relative flex justify-center items-center overflow-hidden" style={{ height: "200px" }}>
+        <div className="relative h-60 overflow-hidden">
           <img
-            className="w-48 h-48 object-cover rounded-lg group-hover:scale-110 transition-transform duration-500 ease-in-out"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
             alt={destination.images[0]?.alt || `${destination.name} image`}
             src={cardImage}
           />
@@ -63,11 +62,7 @@ const DestinationCard = ({ destination, stateKey }) => {
         <CardContent className="flex-grow p-5 pt-0">
           <p className="text-sm text-gray-600 mb-4 line-clamp-3">{destination.description}</p>
           <div className="space-y-2 text-sm mb-4">
-            <div className="flex items-center text-gray-700">
-              <CalendarDays className="h-4 w-4 mr-2 text-primary" />
-              {durationDisplay}
-            </div>
-            <div className="flex items-center text-gray-700">
+            <div className="flex items-center-center text-gray-700">
               <MapPin className="h-4 w-4 mr-2 text-primary" />
               {destination.itinerary?.source || "Customizable Pickup"}
             </div>
