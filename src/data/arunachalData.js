@@ -1,4 +1,3 @@
-
 import { getNewPriceDetails } from '@/lib/priceUtils';
 
 const baseArunachalDestinations = [
@@ -6,7 +5,7 @@ const baseArunachalDestinations = [
     id: "tawang",
     name: "Tawang",
     tagline: "The Land of Monasteries and Majestic Mountains",
-    description: "Tawang is famous for the Tawang Monastery, the largest in India and second largest in the world. It offers stunning views of snow-capped peaks, high-altitude lakes like Sela Pass and Madhuri Lake, and significant historical sites. Inclusions: Hotel, Sightseeing, Transfers. Customizable.",
+    description: "Tawang is famous for the Tawang Monastery, the largest in India and second largest in the world. It offers stunning views of snow-capped peaks, high-altitude lakes like Sela Pass and Madhuri Lake, and a blend of Tibetan and Monpa cultures.",
     duration: "6 Days / 5 Nights",
     bestTime: "September to October, March to June",
     images: [
@@ -80,7 +79,7 @@ const baseArunachalDestinations = [
     id: "ziro-valley",
     name: "Ziro Valley",
     tagline: "Home of the Apatani Tribe & Lush Paddy Fields",
-    description: "Ziro Valley, a UNESCO World Heritage tentative site, is known for its stunning landscapes of rice paddy fields and the unique culture of the Apatani tribe. It hosts the famous Ziro Music Festival. Inclusions: Hotel, Sightseeing, Transfers. Customizable.",
+    description: "Ziro Valley, a UNESCO World Heritage tentative site, is known for its stunning landscapes of rice paddy fields and the unique culture of the Apatani tribe. It hosts the famous Ziro Music Festival every September.",
     duration: "4 Days / 3 Nights",
     bestTime: "March to October (Music festival in September)",
     images: [
@@ -136,7 +135,7 @@ const baseArunachalDestinations = [
     id: "bomdila",
     name: "Bomdila",
     tagline: "Gateway to Tawang with Scenic Views",
-    description: "Bomdila is a charming town offering panoramic views of the Himalayan landscape, including the Kangto and Gorichen Peaks. It's known for its monasteries, apple orchards, and as a stopover en route to Tawang. Inclusions: Hotel, Sightseeing, Transfers. Customizable.",
+    description: "Bomdila is a charming town offering panoramic views of the Himalayan landscape, including the Kangto and Gorichen Peaks. It's known for its monasteries, apple orchards, and as a base for trips to Tawang.",
     duration: "2 Days / 1 Night",
     bestTime: "September to October, March to June",
     images: [
@@ -174,7 +173,7 @@ const baseArunachalDestinations = [
     id: "namdapha-national-park",
     name: "Namdapha National Park",
     tagline: "Biodiversity Hotspot with Unique Wildlife",
-    description: "Namdapha National Park, a vast expanse of pristine wilderness, is one of India's largest protected areas. It's unique for harboring all four big cat species and the Hoolock Gibbon. Inclusions: Hotel/Camping, Transfers. Customizable.",
+    description: "Namdapha National Park, a vast expanse of pristine wilderness, is one of India's largest protected areas. It's unique for harboring all four big cat species and the Hoolock Gibbon.",
     duration: "5 Days / 4 Nights",
     bestTime: "October to April",
     images: [
@@ -241,6 +240,6 @@ export const arunachalDestinations = baseArunachalDestinations.map(dest => {
   return {
     ...dest,
     priceDisplay: priceDetails.discounted,
-    originalPriceDisplay: priceDetails.original !== priceDetails.discounted ? priceDetails.original : null
+    originalPriceDisplay: priceDetails.original
   };
 });
