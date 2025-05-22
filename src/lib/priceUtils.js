@@ -1,3 +1,6 @@
+// src/lib/priceUtils.js
+
+// Utility to format a price range, e.g., "₹12,000 - ₹18,000"
 export const formatPriceRange = (min, max) => {
   const roundedMin = Math.round(min);
   const roundedMax = max ? Math.round(max) : null;
@@ -7,6 +10,7 @@ export const formatPriceRange = (min, max) => {
   return `₹${roundedMin.toLocaleString()}`;
 };
 
+// Utility to compute price details with 25% "original" markup
 export const getNewPriceDetails = (durationString, id, priceData) => {
   let days = 0, nights = 0;
   if (durationString) {
@@ -20,17 +24,22 @@ export const getNewPriceDetails = (durationString, id, priceData) => {
     if (days && !nights) nights = Math.max(0, days - 1);
   }
 
-  // Updated logic: min = car + itinerary, max = car + itinerary + accommodation
-  const carTravelCharge = days * 4000;         // changed 3000 → 4000
+  // Pricing logic
+  const carTravelCharge = days * 4000;
   const itineraryCost = days * 500;
-  const accommodationCharge = nights * 3500;   // changed 2500 → 3500
+  const accommodationCharge = nights * 3500;
 
   const minPrice = carTravelCharge + itineraryCost;
   const maxPrice = carTravelCharge + itineraryCost + accommodationCharge;
 
-  // Return in the old format for compatibility
+  // Calculate original (25% higher) prices for both min & max
+  const originalMin = Math.round(minPrice * 1.25);
+  const originalMax = Math.round(maxPrice * 1.25);
+
   return {
-    original: formatPriceRange(minPrice, maxPrice),
+    // Strikethrough/original price range (25% higher)
+    original: formatPriceRange(originalMin, originalMax),
+    // Current/discounted price range (actual)
     discounted: formatPriceRange(minPrice, maxPrice)
   };
 };
