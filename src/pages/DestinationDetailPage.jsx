@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Clock, CalendarDays, Users, ArrowLeft } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { destinationsData, getStateKeyForDestination } from "@/data/destinationsMaster";
+import { getNewPriceDetails } from "@/lib/priceUtils";
 
 const whatsappBaseLink = "https://wa.me/918822608900?text=I'm%20interested%20in%20booking%20a%20tour%20to%20";
 
@@ -15,6 +16,11 @@ const DestinationDetailPage = () => {
 
   const stateKey = urlStateKey || getStateKeyForDestination(destinationId);
   const destination = destinationsData[stateKey]?.find(dest => dest.id === destinationId);
+
+  // Compute price details using the utility
+  const priceDetails = destination
+    ? getNewPriceDetails(destination.duration, destination.id, destination.priceData)
+    : null;
 
   if (!destination) {
     return (
@@ -210,19 +216,37 @@ const DestinationDetailPage = () => {
                   </span>
                 </div>
               )}
-              {/* Added the requested two lines below */}
+
+              {/* ---- BEGIN PRICE & NEW QUICK FACTS ---- */}
               <div className="flex items-center">
                 <span className="h-5 w-5 mr-3 text-primary font-bold">₹</span>
                 <span className="text-gray-700">
-                  Price: <span className="font-medium">Negotiable</span>
+                  Price: <span className="font-medium">
+                    {priceDetails ? priceDetails.discounted : "Contact for price"}
+                  </span>
                 </span>
               </div>
-              <div className="flex items-center">
-                <span className="h-5 w-5 mr-3 text-primary font-bold">*</span>
-                <span className="text-gray-700">
-                  Itinerary: <span className="font-medium">Customizable</span>
-                </span>
-              </div>
+              <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700">
+                <li>
+                  The standard vehicle provided is a sedan. If you require an SUV, an additional charge of ₹2,000 per day applies.
+                </li>
+                <li>
+                  A sedan package includes up to 3 persons. For groups larger than 3, an SUV can be arranged (extra charges apply).
+                </li>
+                <li>
+                  The base price covers transportation only and does not include accommodation. The higher price includes hotel accommodation for one person in a 2–3 star property.
+                </li>
+                <li>
+                  A maximum of 3 persons can be included per package at the base price if accommodation is not required. If you do not need accommodation, up to 3 people can travel together for the base price.
+                </li>
+                <li>
+                  For SUV bookings, more than 3 persons can be accommodated.
+                </li>
+                <li>
+                  All details, prices, and arrangements are negotiable. Please connect with us for personalized offers or special requirements.
+                </li>
+              </ul>
+              {/* ---- END PRICE & NEW QUICK FACTS ---- */}
             </CardContent>
           </Card>
           <Button
