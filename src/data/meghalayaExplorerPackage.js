@@ -1,11 +1,10 @@
-
 import { getNewPriceDetails } from '@/lib/priceUtils';
 
 const basePackage = {
   id: "meghalaya-kaziranga-explorer",
   name: "Meghalaya Kaziranga Guwahati Explorer",
   tagline: "Clouds, Culture, Caves & Wildlife Expedition",
-  description: "Embark on an epic 7-day adventure starting from Guwahati. Witness Shillong's colonial charm and Umiam Lake's serenity. Delve into Cherrapunji's misty landscapes, marvel at Elephant Falls, living root bridges, and stunning waterfalls. Experience the thrill of a Kaziranga National Park safari, spotting rhinos and diverse wildlife. This package offers a perfect blend of Meghalaya's natural wonders and Assam's wild heart. Inclusions: Hotel, Sightseeing, All Transfers. Customizable.",
+  description: "Embark on an epic 7-day adventure starting from Guwahati. Witness Shillong's colonial charm and Umiam Lake's serenity. Delve into Cherrapunji's misty landscapes, marvel at Elephant Falls, and explore mysterious caves. Continue to Kaziranga for thrilling safaris to see rhinos and rich wildlife. End with a spiritual visit to Kamakhya Temple in Guwahati.",
   duration: "7 Days / 6 Nights",
   bestTime: "October to April",
   priceData: {
@@ -95,5 +94,5 @@ const priceDetails = getNewPriceDetails(basePackage.duration, basePackage.id, ba
 export const meghalayaKazirangaExplorerPackage = {
   ...basePackage,
   priceDisplay: priceDetails.discounted,
-  originalPriceDisplay: priceDetails.original !== priceDetails.discounted ? priceDetails.original : null
+  originalPriceDisplay: priceDetails.original
 };
