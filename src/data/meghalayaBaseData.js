@@ -1,4 +1,3 @@
-
 import { getNewPriceDetails } from '@/lib/priceUtils';
 
 const baseDestinations = [
@@ -6,7 +5,7 @@ const baseDestinations = [
     id: "cherrapunji",
     name: "Cherrapunji (Sohra)",
     tagline: "The Land of Living Root Bridges and Waterfalls",
-    description: "Cherrapunji, locally known as Sohra, is famed for its double-decker living root bridges, breathtaking waterfalls like Nohkalikai and Seven Sisters Falls, and mysterious caves such as Mawsmai Cave. It's a paradise for nature lovers and adventure seekers. Inclusions: Hotel, Sightseeing, Transfers. Customizable.",
+    description: "Cherrapunji, locally known as Sohra, is famed for its double-decker living root bridges, breathtaking waterfalls like Nohkalikai and Seven Sisters Falls, and mysterious caves such as Mawsmai. Ideal for nature lovers and adventure seekers.",
     duration: "3 Days / 2 Nights",
     bestTime: "October to May",
     images: [
@@ -57,7 +56,7 @@ const baseDestinations = [
     id: "shillong",
     name: "Shillong",
     tagline: "Scotland of the East",
-    description: "Shillong, the capital of Meghalaya, is a charming hill station known for its colonial-era architecture, picturesque lakes like Ward's Lake, and vibrant culture. Don Bosco Museum offers deep insights into the local heritage. Inclusions: Hotel, Sightseeing, Transfers. Customizable.",
+    description: "Shillong, the capital of Meghalaya, is a charming hill station known for its colonial-era architecture, picturesque lakes like Ward's Lake, and vibrant culture. Don Bosco Museum and Shillong Peak are must-see attractions.",
     duration: "3 Days / 2 Nights",
     bestTime: "Year-round",
     images: [
@@ -106,7 +105,7 @@ const baseDestinations = [
     id: "dawki",
     name: "Dawki",
     tagline: "The Crystal Clear River Town",
-    description: "Dawki is renowned for the Umngot River, whose waters are so clear they appear transparent. Boating onthe river is a surreal experience, offering views of the riverbed. It's also a border town with Bangladesh. Inclusions: Guesthouse/Campsite,   Local Transfers. Customizable.",
+    description: "Dawki is renowned for the Umngot River, whose waters are so clear they appear transparent. Boating on the river is a surreal experience, offering views of the riverbed. It's also a gateway to Bangladesh and offers adventure sports.",
     duration: "2 Days / 1 Night",
     bestTime: "October to March",
     images: [
@@ -146,7 +145,7 @@ const baseDestinations = [
     id: "mawlynnong",
     name: "Mawlynnong",
     tagline: "Asia's Cleanest Village",
-    description: "Mawlynnong is a picturesque village acclaimed for its cleanliness. It offers a glimpse into sustainable Khasi lifestyle, with beautiful gardens, bamboo dustbins, and a nearby living root bridge. Inclusions: Village Walk, Transfers (if part of a larger tour). Customizable.",
+    description: "Mawlynnong is a picturesque village acclaimed for its cleanliness. It offers a glimpse into sustainable Khasi lifestyle, with beautiful gardens, bamboo dustbins, and a nearby living root bridge and Sky Walk.",
     duration: "2 Days/ 1 Night",
     bestTime: "Year-round",
     images: [
@@ -157,28 +156,28 @@ const baseDestinations = [
     ],
     itinerary: {
       source: "Guwahati",
-     days: [
-      {
-        day: 1,
-        title: "Guwahati to Mawlynnong",
-        activities: [
-          "Morning pickup from Guwahati (around 6 AM).",
-          "Drive to Mawlynnong (approx. 5-6 hours).",
-          "Explore Mawlynnong village, visit the living root bridge and Sky Walk.",
-          "Overnight stay in Mawlynnong or nearby guesthouse."
-        ]
-      },
-      {
-        day: 2,
-        title: "Mawlynnong to Dawki & Return",
-        activities: [
-          "Breakfast in Mawlynnong.",
-          "Proceed to Dawki (approx. 1 hour from Mawlynnong).",
-          "Enjoy boating on the Umngot River.",
-          "Optional: Visit Shnongpdeng or nearby attractions.",
-          "After lunch, drive back to Guwahati (approx. 6-7 hours).",
-          "Evening drop-off in Guwahati."
-        ]
+      days: [
+        {
+          day: 1,
+          title: "Guwahati to Mawlynnong",
+          activities: [
+            "Morning pickup from Guwahati (around 6 AM).",
+            "Drive to Mawlynnong (approx. 5-6 hours).",
+            "Explore Mawlynnong village, visit the living root bridge and Sky Walk.",
+            "Overnight stay in Mawlynnong or nearby guesthouse."
+          ]
+        },
+        {
+          day: 2,
+          title: "Mawlynnong to Dawki & Return",
+          activities: [
+            "Breakfast in Mawlynnong.",
+            "Proceed to Dawki (approx. 1 hour from Mawlynnong).",
+            "Enjoy boating on the Umngot River.",
+            "Optional: Visit Shnongpdeng or nearby attractions.",
+            "After lunch, drive back to Guwahati (approx. 6-7 hours).",
+            "Evening drop-off in Guwahati."
+          ]
         }
       ]
     }
@@ -190,6 +189,6 @@ export const meghalayaBaseDestinations = baseDestinations.map(dest => {
   return {
     ...dest,
     priceDisplay: priceDetails.discounted,
-    originalPriceDisplay: priceDetails.original !== priceDetails.discounted ? priceDetails.original : null
+    originalPriceDisplay: priceDetails.original
   };
 });
