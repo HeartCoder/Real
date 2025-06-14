@@ -45,7 +45,7 @@ const servicesData = {
     ],
     images: [
       { src: "/images/Homebackground1.jpg", alt: "Group of tourists enjoying a scenic view in Ziro Valley" },
-      { src: "/inages/Homebackground3.jpg", alt: "Happy travelers on an adventure tour" },
+      { src: "/images/Homebackground3.jpg", alt: "Happy travelers on an adventure tour" },
       { src: "/images/AboutNorthEast.jpg", alt: "Breathtaking landscape of North East India" }
     ],
     icon: <Users className="h-12 w-12 text-primary" />
@@ -66,7 +66,7 @@ const servicesData = {
     images: [
       { src: "/images/Accomodation.jpg", alt: "Cozy homestay in a serene location in Dawki" },
       { src: "/images/DestinationsPage.jpg", alt: "Luxurious hotel room with a view" },
-      { src: "/images/DestinationHero.jpg", alt: "Eco-friendly resort amidst nature" }
+      { src: "/images/Accomodation.jpg", alt: "Eco-friendly resort amidst nature" }
     ],
     icon: <Hotel className="h-12 w-12 text-primary" />
   }
