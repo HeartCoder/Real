@@ -43,9 +43,9 @@ const TermsOfServicePage = () => {
             <h2 className="text-2xl font-semibold mt-6 mb-3">Contact Us</h2>
             <p>If you have any questions about these Terms, please contact us:</p>
             <ul>
-              <li>By email: info@namastenortheast.com</li>
+              <li>By email: namastenortheast2000@gmail.com</li>
               <li>By visiting this page on our website: <a href="/contact" className="text-primary hover:underline">namastenortheast.com/contact</a></li>
-              <li>By phone number: +91 8822989693</li>
+              <li>By phone number: +91 7086936300</li>
             </ul>
           </div>
         </motion.div>
