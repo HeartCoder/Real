@@ -15,9 +15,9 @@ const FeaturedDestinations = () => {
 
   const imageMap = {
     "cherrapunji": "/images/doubledecker.jpg",
-    "tawang": "/images/tawang.jpg",
+    "tawang": "/images/Tawang.jpeg",
     "kaziranga-national-park": "/images/kaziranga.jpg",
-    "dawki": "/images/dawki.jpg",
+    "dawki": "/images/dawki2.jpeg",
   };
 
 
