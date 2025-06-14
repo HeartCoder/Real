@@ -24,9 +24,9 @@ const Footer = () => {
   ];
 
   const socialMedia = [
-    { name: "Facebook", icon: <Facebook size={20} />, href: "https://www.facebook.com/namastenortheastghy" },
-    { name: "Instagram", icon: <Instagram size={20} />, href: "https://www.instagram.com/namaste_northeast_/" },
-    { name: "Twitter", icon: <Twitter size={20} />, href: "#" },
+    { name: "Facebook", icon: <Facebook size={20} />, href: "" },
+    { name: "Instagram", icon: <Instagram size={20} />, href: "" },
+    { name: "Twitter", icon: <Twitter size={20} />, href: "" },
   ];
 
   return (
