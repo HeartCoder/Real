@@ -14,10 +14,10 @@ const FeaturedDestinations = () => {
   const featured = getFeaturedDestinations();
 
   const imageMap = {
-    "cherrapunji": "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/d4a4a3828aa2214cba3aea1001eb7ed5.jpg",
-    "tawang": "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/5b9054aafa87ba20a9eb3c2f72756138.jpg",
-    "kaziranga-national-park": "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/c507eeac7beace3abaa4c7767275caf7.jpg",
-    "dawki": "https://storage.googleapis.com/hostinger-horizons-assets-prod/0f07c0bc-e59f-42de-aec6-76edee202496/4bd73408677d8142fb0f79f4257cfafd.jpg",
+    "cherrapunji": "/images/doubledecker.jpg",
+    "tawang": "/images/tawang.jpg",
+    "kaziranga-national-park": "/images/kaziranga.jpg",
+    "dawki": "/images/dawki.jpg",
   };
 
 
