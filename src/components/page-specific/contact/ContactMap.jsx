@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const ContactMap = () => {
@@ -13,7 +12,7 @@ const ContactMap = () => {
         </div>
         <div className="rounded-lg overflow-hidden shadow-lg h-[400px] md:h-[500px]">
           <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=91.6906%2C26.1606%2C91.7106%2C26.1706&amp;layer=mapnik&amp;marker=26.1656,91.7006"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=91.6662653%2C26.1474477%2C91.6862653%2C26.1674477&amp;layer=mapnik&amp;marker=26.1574477,91.6762653"
             width="100%"
             height="100%"
             frameBorder="0"
