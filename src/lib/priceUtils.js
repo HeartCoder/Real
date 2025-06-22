@@ -10,18 +10,29 @@ export const formatPriceRange = (min, max) => {
   return `₹${roundedMin.toLocaleString()}`;
 };
 
-// Hardcoded price ranges for selected destinations
+// Hardcoded price ranges for selected destinations (keys normalized to lowercase)
 const HARDCODED_PRICES = {
-  'Cherrapunji': { min: 10800, max: 14900 },
-  'Tawang': { min: 23900, max: 29500 },
-  'Dawki': { min: 8000, max: 10000 }
+  'cherrapunji': { min: 10800, max: 14900 },
+  'tawang': { min: 23900, max: 29500 },
+  'dawki': { min: 8000, max: 10000 }
 };
 
-// Utility to compute price details, using hardcoded prices if available
+/**
+ * Utility to compute price details for a trip.
+ * If a hardcoded price is available for the destination (case-insensitive), it is used.
+ * Otherwise, price is calculated based on duration.
+ *
+ * @param {string} durationString - e.g. "3 Days / 2 Nights"
+ * @param {string} nameOrId - destination ID or name
+ * @param {object} priceData - optional, not used in current logic
+ * @returns {object} { original, discounted }
+ */
 export const getNewPriceDetails = (durationString, nameOrId, priceData) => {
-  // Use hardcoded prices if the destination name matches
-  if (HARDCODED_PRICES[nameOrId]) {
-    const { min, max } = HARDCODED_PRICES[nameOrId];
+  // Normalize the destination key for case-insensitive match
+  const lookupKey = typeof nameOrId === 'string' ? nameOrId.trim().toLowerCase() : '';
+
+  if (HARDCODED_PRICES[lookupKey]) {
+    const { min, max } = HARDCODED_PRICES[lookupKey];
     const originalMin = Math.round(min * 1.25);
     const originalMax = Math.round(max * 1.25);
     return {
