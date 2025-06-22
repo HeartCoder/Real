@@ -32,7 +32,7 @@ export const getNewPriceDetails = (durationString, nameOrId, priceData) => {
     };
   }
 
-  // --- Original calculation for other destinations ---
+  // --- Calculation for other destinations ---
   let days = 0, nights = 0;
   if (durationString) {
     const dayMatch = durationString.match(/(\d+)\s*days?/i);
@@ -45,13 +45,10 @@ export const getNewPriceDetails = (durationString, nameOrId, priceData) => {
     if (days && !nights) nights = Math.max(0, days - 1);
   }
 
-  // Pricing logic
-  const carTravelCharge = days * 4000;
-  const itineraryCost = days * 500;
-  const accommodationCharge = nights * 3500;
-
-  const minPrice = carTravelCharge + itineraryCost;
-  const maxPrice = carTravelCharge + itineraryCost + accommodationCharge;
+  // Pricing logic (minPrice uses days * 3999, maxPrice formula unchanged)
+  const carTravelCharge = days * 3999;
+  const minPrice = carTravelCharge;
+  const maxPrice = minPrice + (days * 2000);
 
   // Calculate original (25% higher) prices for both min & max
   const originalMin = Math.round(minPrice * 1.25);
