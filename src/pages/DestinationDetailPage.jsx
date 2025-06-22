@@ -217,36 +217,32 @@ const DestinationDetailPage = () => {
                 </div>
               )}
 
-              {/* ---- BEGIN PRICE & NEW QUICK FACTS ---- */}
-              <div className="flex items-center">
-                <span className="h-5 w-5 mr-3 text-primary font-bold">₹</span>
-                <span className="text-gray-700">
-                  Price: <span className="font-medium">
-                    {priceDetails ? priceDetails.discounted : "Contact for price"}
-                  </span>
+              {/* PRICE - Prominent */}
+              <div className="flex items-center my-4">
+                <span className="h-8 w-8 mr-2 text-primary font-bold text-3xl leading-none">₹</span>
+                <span className="text-primary font-extrabold text-3xl leading-none">
+                  {priceDetails ? priceDetails.discounted : "Contact for price"}
                 </span>
               </div>
+              <div className="text-gray-600 text-sm mb-2">
+                <span className="font-medium">Starting Price Per Package</span>
+              </div>
+
+              {/* QUICK FACTS LIST */}
               <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700">
                 <li>
-                  The standard vehicle provided is a sedan. If you require an SUV, an additional charge of ₹2,000 per day applies.
+                  The base price covers a Maruti Suzuki Dzire or any other sedan vehicle. The higher price mentioned in the package covers a Toyota Innova or any other SUV.
                 </li>
                 <li>
-                  A sedan package includes up to 3 persons. For groups larger than 3, an SUV can be arranged (extra charges apply).
+                  A maximum of 3 persons can be included in a package at the base price. If you are travelling with more than 3 persons, please book at the higher price which covers an SUV vehicle.
                 </li>
                 <li>
-                  The base price covers transportation only and does not include accommodation. The higher price includes hotel accommodation for one person in a 2–3 star property.
-                </li>
-                <li>
-                  A maximum of 3 persons can be included per package at the base price if accommodation is not required. If you do not need accommodation, up to 3 people can travel together for the base price.
-                </li>
-                <li>
-                  For SUV bookings, more than 3 persons can be accommodated.
+                  Accommodation charges are not included in the prices mentioned above. Accommodation prices range according to requirements from ₹1,500 per night to ₹4,500 per night.
                 </li>
                 <li>
                   All details, prices, and arrangements are negotiable. Please connect with us for personalized offers or special requirements.
                 </li>
               </ul>
-              {/* ---- END PRICE & NEW QUICK FACTS ---- */}
             </CardContent>
           </Card>
           <Button
