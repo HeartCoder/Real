@@ -10,8 +10,29 @@ export const formatPriceRange = (min, max) => {
   return `₹${roundedMin.toLocaleString()}`;
 };
 
-// Utility to compute price details with 25% "original" markup
-export const getNewPriceDetails = (durationString, id, priceData) => {
+// Hardcoded price ranges for selected destinations
+const HARDCODED_PRICES = {
+  'Cherrapunji': { min: 10800, max: 14900 },
+  'Tawang': { min: 23900, max: 29500 },
+  'Dawki': { min: 8000, max: 10000 }
+};
+
+// Utility to compute price details, using hardcoded prices if available
+export const getNewPriceDetails = (durationString, nameOrId, priceData) => {
+  // Use hardcoded prices if the destination name matches
+  if (HARDCODED_PRICES[nameOrId]) {
+    const { min, max } = HARDCODED_PRICES[nameOrId];
+    const originalMin = Math.round(min * 1.25);
+    const originalMax = Math.round(max * 1.25);
+    return {
+      // Strikethrough/original price range (25% higher)
+      original: formatPriceRange(originalMin, originalMax),
+      // Current/discounted price range (actual)
+      discounted: formatPriceRange(min, max)
+    };
+  }
+
+  // --- Original calculation for other destinations ---
   let days = 0, nights = 0;
   if (durationString) {
     const dayMatch = durationString.match(/(\d+)\s*days?/i);
