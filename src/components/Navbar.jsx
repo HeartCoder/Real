@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Phone, MountainSnow } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,7 +14,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { destinationsData } from "@/data/destinationsMaster";
-
 
 const ListItem = React.forwardRef(({ className, title, children, href, ...props }, ref) => {
   return (
@@ -88,8 +86,9 @@ const Navbar = () => {
     <motion.nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled || isOpen ? "bg-white shadow-lg text-gray-800" : "bg-transparent text-white",
-        location.pathname !== "/" && !isScrolled && !isOpen ? "bg-white shadow-lg text-gray-800" : "" 
+        (isScrolled || isOpen || location.pathname !== "/") 
+          ? "bg-white shadow-lg text-gray-800" 
+          : "bg-transparent text-white"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -98,13 +97,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center text-xl font-bold font-volkhov">
-            <div className={cn(
-              "flex items-center justify-center h-10 w-10 rounded-full mr-2 transition-colors duration-300",
-              isScrolled || isOpen || location.pathname !== "/" ? "bg-primary text-white" : "bg-white text-primary"
-            )}>
-              <MountainSnow size={20} />
-            </div>
-            Namaste <span className={cn("ml-1", isScrolled || isOpen || location.pathname !== "/" ? "text-primary" : "text-primary")}>North East</span>
+            Namaste <span className={cn("ml-1", (isScrolled || isOpen || location.pathname !== "/") ? "text-primary" : "text-primary")}>North East</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-2">
@@ -115,8 +108,12 @@ const Navbar = () => {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        cn(navigationMenuTriggerStyle(), isActive ? "bg-primary/10 text-primary" : "", 
-                        isScrolled || location.pathname !== "/" ? "text-gray-700 hover:bg-gray-100 focus:bg-gray-100" : "text-white hover:bg-white/10 focus:bg-white/10"
+                        cn(
+                          navigationMenuTriggerStyle(), 
+                          isActive ? "bg-primary/10 text-primary" : "", 
+                          (isScrolled || isOpen || location.pathname !== "/") 
+                            ? "text-gray-700 hover:bg-gray-100 focus:bg-gray-100" 
+                            : "text-white hover:bg-white/20 focus:bg-white/20"
                         )
                       }
                     >
@@ -125,7 +122,15 @@ const Navbar = () => {
                   </NavigationMenuItem>
                 ))}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={cn(isScrolled || location.pathname !== "/" ? "text-gray-700 hover:bg-gray-100 focus:bg-gray-100" : "text-white hover:bg-white/10 focus:bg-white/10")}>Destinations</NavigationMenuTrigger>
+                  <NavigationMenuTrigger 
+                    className={cn(
+                      (isScrolled || isOpen || location.pathname !== "/") 
+                        ? "text-gray-700 hover:bg-gray-100 focus:bg-gray-100" 
+                        : "text-white hover:bg-white/20 focus:bg-white/20"
+                    )}
+                  >
+                    Destinations
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {Object.entries(destinationsData).map(([stateKey, destinations]) =>
@@ -147,7 +152,16 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <Button asChild variant="ghost" className={cn("ml-4", isScrolled || location.pathname !== "/" ? "text-primary hover:bg-primary/10" : "text-white hover:bg-white/10 border-white/50 hover:border-white")}>
+            <Button 
+              asChild 
+              variant="ghost" 
+              className={cn(
+                "ml-4", 
+                (isScrolled || isOpen || location.pathname !== "/") 
+                  ? "text-primary hover:bg-primary/10 border-primary/20" 
+                  : "text-white hover:bg-white/20 border-white/50 hover:border-white"
+              )}
+            >
               <a href={callLink}>
                 <Phone className="mr-2 h-4 w-4" /> Call Us
               </a>
@@ -157,7 +171,12 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className={cn("p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset", isScrolled || location.pathname !== "/" ? "focus:ring-primary text-gray-700" : "focus:ring-white text-white")}
+              className={cn(
+                "p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset", 
+                (isScrolled || isOpen || location.pathname !== "/") 
+                  ? "focus:ring-primary text-gray-700" 
+                  : "focus:ring-white text-white"
+              )}
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -173,7 +192,12 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={cn("md:hidden overflow-hidden", isScrolled || location.pathname !== "/" ? "bg-white text-gray-800" : "bg-black/80 backdrop-blur-md text-white")}
+            className={cn(
+              "md:hidden overflow-hidden", 
+              (isScrolled || location.pathname !== "/") 
+                ? "bg-white text-gray-800" 
+                : "bg-black/80 backdrop-blur-md text-white"
+            )}
           >
             <div className="container mx-auto px-4 md:px-6 py-4 space-y-2">
               {navLinks.map((link, i) => (
