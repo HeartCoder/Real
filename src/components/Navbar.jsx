@@ -96,8 +96,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center text-xl font-bold font-volkhov">
-            Namaste <span className={cn("ml-1", (isScrolled || isOpen || location.pathname !== "/") ? "text-primary" : "text-primary")}>North East</span>
+          <Link to="/" className="flex items-center text-xl font-bold font-volkhov text-primary">
+            Namaste <span className="ml-1">North East</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-2">
@@ -110,10 +110,8 @@ const Navbar = () => {
                       className={({ isActive }) =>
                         cn(
                           navigationMenuTriggerStyle(), 
-                          isActive ? "bg-primary/10 text-primary" : "", 
-                          (isScrolled || isOpen || location.pathname !== "/") 
-                            ? "text-gray-700 hover:bg-gray-100 focus:bg-gray-100" 
-                            : "text-white hover:bg-white/20 focus:bg-white/20"
+                          "text-primary hover:bg-primary/10 focus:bg-primary/10",
+                          isActive ? "bg-primary/20 text-primary font-semibold" : ""
                         )
                       }
                     >
@@ -122,13 +120,7 @@ const Navbar = () => {
                   </NavigationMenuItem>
                 ))}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger 
-                    className={cn(
-                      (isScrolled || isOpen || location.pathname !== "/") 
-                        ? "text-gray-700 hover:bg-gray-100 focus:bg-gray-100" 
-                        : "text-white hover:bg-white/20 focus:bg-white/20"
-                    )}
-                  >
+                  <NavigationMenuTrigger className="text-primary hover:bg-primary/10 focus:bg-primary/10">
                     Destinations
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -155,12 +147,7 @@ const Navbar = () => {
             <Button 
               asChild 
               variant="ghost" 
-              className={cn(
-                "ml-4", 
-                (isScrolled || isOpen || location.pathname !== "/") 
-                  ? "text-primary hover:bg-primary/10 border-primary/20" 
-                  : "text-white hover:bg-white/20 border-white/50 hover:border-white"
-              )}
+              className="ml-4 text-primary hover:bg-primary/10 border-primary/20"
             >
               <a href={callLink}>
                 <Phone className="mr-2 h-4 w-4" /> Call Us
@@ -171,12 +158,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className={cn(
-                "p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset", 
-                (isScrolled || isOpen || location.pathname !== "/") 
-                  ? "focus:ring-primary text-gray-700" 
-                  : "focus:ring-white text-white"
-              )}
+              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary text-primary"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
