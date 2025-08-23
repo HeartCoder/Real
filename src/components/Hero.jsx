@@ -1,118 +1,90 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  // Settings for the slider
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000, // 5 seconds
-    arrows: true,
-  };
-
-  // Create an array of images
+  // load 10 images dynamically
   const images = Array.from({ length: 10 }, (_, i) => `/images/image${i + 1}.jpg`);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
-    <section className="relative w-full">
+    <section className="relative w-full h-[600px] overflow-hidden flex flex-col items-center justify-center bg-black">
       {/* Image Slider */}
-      <div className="w-full h-[400px] overflow-hidden">
-        <Slider {...settings}>
-          {images.map((src, index) => (
-            <div key={index}>
-              <img
-                src={src}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-[400px] object-cover"
-              />
-            </div>
-          ))}
-        </Slider>
+      <div className="relative w-full h-[400px]">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`slide-${currentIndex}`}
+          className="absolute w-full h-full object-cover rounded-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        />
+
+        {/* Prev & Next Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/50 text-white px-4 py-2 rounded-full"
+        >
+          ‹
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-5 top-1/2 -translate-y-1/2 bg-black/50 text-white px-4 py-2 rounded-full"
+        >
+          ›
+        </button>
       </div>
 
-      {/* Existing Text + Buttons */}
-      <div className="text-center mt-6 px-4">
-        <h1 className="text-4xl font-bold">Welcome to Our Website</h1>
-        <p className="mt-2 text-lg text-gray-600">
-          Your description goes here...
-        </p>
-        <div className="mt-4 flex justify-center gap-4">
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow">
+      {/* Text + Buttons Below Images */}
+      <div className="text-center mt-6">
+        <motion.h1
+          className="text-4xl font-bold text-white"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Welcome to Our Site
+        </motion.h1>
+        <motion.p
+          className="mt-4 text-lg text-gray-300"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          Explore our amazing features and services
+        </motion.p>
+        <motion.div
+          className="mt-6 flex justify-center gap-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <button className="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg hover:bg-blue-700">
             Get Started
           </button>
-          <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg shadow">
+          <button className="px-6 py-3 bg-gray-200 text-gray-900 rounded-2xl shadow-lg hover:bg-gray-300">
             Learn More
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
-  );
-};
-
-export default Hero;            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <p className="text-lg md:text-xl text-gray-200 mb-8">
-              Experience the untouched beauty, rich culture, and breathtaking landscapes of Meghalaya, Arunachal Pradesh, and Assam with our premium travel services.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mt-2"
-          >
-            {/* Explore Destinations */}
-            <Link to="/destinations">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto flex items-center gap-2 shadow-lg rounded-xl px-6 py-4 text-lg"
-              >
-                <MapPinned className="h-5 w-5" />
-                Explore Destinations
-              </Button>
-            </Link>
-            {/* Book a Car */}
-            <a href="/services#car-rental">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto flex items-center gap-2 shadow-lg rounded-xl px-6 py-4 text-lg"
-              >
-                <Car className="h-5 w-5" />
-                Book a Car
-              </Button>
-            </a>
-            {/* Book a Hotel */}
-            <a href="/services#accommodation">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto flex items-center gap-2 shadow-lg rounded-xl px-6 py-4 text-lg"
-              >
-                <BedDouble className="h-5 w-5" />
-                Book a Hotel
-              </Button>
-            </a>
-            {/* Book a Tour */}
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto flex items-center gap-2 shadow-lg rounded-xl px-6 py-4 text-lg"
-              >
-                <Send className="h-5 w-5" />
-                Book a Tour
-              </Button>
-            </a>
-          </motion.div>
-        </div>
-      </div>
-    </div>
   );
 };
 
