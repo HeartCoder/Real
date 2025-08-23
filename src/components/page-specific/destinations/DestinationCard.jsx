@@ -1,10 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CalendarDays, MapPin, CheckCircle, Sparkles } from "lucide-react";
-import { getNewPriceDetails } from "@/lib/priceUtils";
 
 const DestinationCard = ({ destination, stateKey }) => {
   const navigate = useNavigate();
@@ -15,11 +14,6 @@ const DestinationCard = ({ destination, stateKey }) => {
 
   const cardImage = destination.images[0]?.url || "https://images.unsplash.com/photo-1492714284113-6e74f3a3d95c";
   
-  const priceDetails = useMemo(
-    () => getNewPriceDetails(destination.duration, destination.id, destination.priceData),
-    [destination.duration, destination.id, destination.priceData]
-  );
-
   const durationDisplay = destination.duration.includes("Nights")
     ? destination.duration
     : `${destination.duration.match(/\d+/)[0]} Days / ${parseInt(destination.duration.match(/\d+/)[0], 10) - 1} Nights`;
@@ -62,7 +56,7 @@ const DestinationCard = ({ destination, stateKey }) => {
         <CardContent className="flex-grow p-5 pt-0">
           <p className="text-sm text-gray-600 mb-4 line-clamp-3">{destination.description}</p>
           <div className="space-y-2 text-sm mb-4">
-            <div className="flex items-center-center text-gray-700">
+            <div className="flex items-center text-gray-700">
               <MapPin className="h-4 w-4 mr-2 text-primary" />
               {destination.itinerary?.source || "Customizable Pickup"}
             </div>
@@ -73,22 +67,10 @@ const DestinationCard = ({ destination, stateKey }) => {
           </div>
         </CardContent>
         
-        <CardFooter className="p-5 pt-0 flex flex-col space-y-2">
-          <div className="flex items-center justify-between w-full">
-            <div>
-              <span className="text-lg font-bold text-primary mr-2">
-                {priceDetails.discounted}
-              </span>
-              {priceDetails.original !== priceDetails.discounted && (
-                <span className="text-gray-400 line-through text-base">
-                  {priceDetails.original}
-                </span>
-              )}
-            </div>
-            <Button onClick={handleViewDetails} size="sm" className="bg-primary hover:bg-primary/90 text-white">
-              View Details
-            </Button>
-          </div>
+        <CardFooter className="p-5 pt-0 flex justify-end">
+          <Button onClick={handleViewDetails} size="sm" className="bg-primary hover:bg-primary/90 text-white">
+            View Details
+          </Button>
         </CardFooter>
       </Card>
     </motion.div>
