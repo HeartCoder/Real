@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -25,14 +24,14 @@ const ScrollToTop = () => {
   return null;
 };
 
-
 const App = () => {
   return (
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        {/* FIXED: Added pt-20 to push content below navbar */}
+        <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/destinations" element={<DestinationsPage />} />
