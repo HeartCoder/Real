@@ -1,40 +1,61 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { MapPinned, Car, BedDouble, Send } from "lucide-react";
-import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
-  const phoneNumber = "8822608900";
-  const countryCode = "+91";
-  const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}?text=Hello%2C%20I'm%20interested%20in%20booking%20a%20tour.`;
+  // Settings for the slider
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000, // 5 seconds
+    arrows: true,
+  };
+
+  // Create an array of images
+  const images = Array.from({ length: 10 }, (_, i) => `/images/image${i + 1}.jpg`);
 
   return (
-    <div className="relative h-screen">
-      <div className="absolute inset-0 z-0">
-        <img  
-          className="w-full h-full object-cover" 
-          alt="Beautiful landscape of North East India"
-          src="/images/Hero.jpg"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10"></div>
+    <section className="relative w-full">
+      {/* Image Slider */}
+      <div className="w-full h-[400px] overflow-hidden">
+        <Slider {...settings}>
+          {images.map((src, index) => (
+            <div key={index}>
+              <img
+                src={src}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-20 h-full flex items-center">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              Discover the Magic of <span className="text-primary">North East India</span>
-            </h1>
-          </motion.div>
+      {/* Existing Text + Buttons */}
+      <div className="text-center mt-6 px-4">
+        <h1 className="text-4xl font-bold">Welcome to Our Website</h1>
+        <p className="mt-2 text-lg text-gray-600">
+          Your description goes here...
+        </p>
+        <div className="mt-4 flex justify-center gap-4">
+          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow">
+            Get Started
+          </button>
+          <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg shadow">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+export default Hero;            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <p className="text-lg md:text-xl text-gray-200 mb-8">
