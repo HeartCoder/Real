@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Clock, CalendarDays, Users, ArrowLeft } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { destinationsData, getStateKeyForDestination } from "@/data/destinationsMaster";
-import { getNewPriceDetails } from "@/lib/priceUtils";
 
 const whatsappBaseLink = "https://wa.me/918822608900?text=I'm%20interested%20in%20booking%20a%20tour%20to%20";
 
@@ -16,11 +15,6 @@ const DestinationDetailPage = () => {
 
   const stateKey = urlStateKey || getStateKeyForDestination(destinationId);
   const destination = destinationsData[stateKey]?.find(dest => dest.id === destinationId);
-
-  // Compute price details using the utility
-  const priceDetails = destination
-    ? getNewPriceDetails(destination.duration, destination.id, destination.priceData)
-    : null;
 
   if (!destination) {
     return (
@@ -216,33 +210,6 @@ const DestinationDetailPage = () => {
                   </span>
                 </div>
               )}
-
-              {/* PRICE - Prominent */}
-              <div className="flex items-center my-4">
-                <span className="h-8 w-8 mr-2 text-primary font-bold text-3xl leading-none">₹</span>
-                <span className="text-primary font-extrabold text-3xl leading-none">
-                  {priceDetails ? priceDetails.discounted : "Contact for price"}
-                </span>
-              </div>
-              <div className="text-gray-600 text-sm mb-2">
-                <span className="font-medium">Starting Price Per Package</span>
-              </div>
-
-              {/* QUICK FACTS LIST */}
-              <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700">
-                <li>
-                  The base price covers a Maruti Suzuki Dzire or any other sedan vehicle. The higher price mentioned in the package covers a Toyota Innova or any other SUV.
-                </li>
-                <li>
-                  A maximum of 3 persons can be included in a package at the base price. If you are travelling with more than 3 persons, please book at the higher price which covers an SUV vehicle.
-                </li>
-                <li>
-                  Accommodation charges are not included in the prices mentioned above. Accommodation prices range according to requirements from ₹1,500 per night to ₹4,500 per night.
-                </li>
-                <li>
-                  All details, prices, and arrangements are negotiable. Please connect with us for personalized offers or special requirements.
-                </li>
-              </ul>
             </CardContent>
           </Card>
           <Button
