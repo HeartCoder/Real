@@ -96,8 +96,14 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center text-xl font-bold font-volkhov text-primary">
-            Namaste <span className="ml-1">North East</span>
+          {/* Logo and Brand Name - UPDATED */}
+          <Link to="/" className="flex items-center space-x-2 text-xl font-bold font-volkhov text-primary">
+            <img 
+              src="/images/image_logo.png" 
+              alt="Namaste North East Logo" 
+              className="h-6 w-auto object-contain" 
+            />
+            <span>Namaste North East</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-2">
