@@ -29,9 +29,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex flex-col">
-      {/* Image Carousel Section */}
-      <div className="relative w-full h-[500px] overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      {/* Image Carousel Section with Overlay Content */}
+      <div className="relative w-full h-screen overflow-hidden">
         {images.map((image, index) => (
           <motion.img
             key={index}
@@ -45,6 +45,78 @@ const Hero = () => {
             transition={{ duration: 1 }}
           />
         ))}
+
+        {/* Dark Overlay for Better Text Readability */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+        {/* Content Overlay - Positioned Above Images */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center px-4">
+          <div className="max-w-4xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Discover the Magic of{" "}
+                <span className="text-yellow-400">North East India</span>
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <p className="text-base md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto">
+                Experience the untouched beauty, rich culture, and breathtaking landscapes of Meghalaya, Arunachal Pradesh, and Assam with our premium travel services.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="flex flex-col sm:flex-row gap-3 justify-center items-center flex-wrap"
+            >
+              {/* Explore Destinations */}
+              <button
+                onClick={() => window.location.href = '/destinations'}
+                className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+              >
+                <MapPinned className="h-4 w-4" />
+                Explore Destinations
+              </button>
+
+              {/* Book a Car */}
+              <button
+                onClick={() => window.location.href = '/services#car-rental'}
+                className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+              >
+                <Car className="h-4 w-4" />
+                Book a Car
+              </button>
+
+              {/* Book a Hotel */}
+              <button
+                onClick={() => window.location.href = '/services#accommodation'}
+                className="bg-purple-600 hover:bg-purple-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+              >
+                <BedDouble className="h-4 w-4" />
+                Book a Hotel
+              </button>
+
+              {/* Book a Tour */}
+              <button
+                onClick={() => window.open(whatsappLink, '_blank')}
+                className="bg-orange-600 hover:bg-orange-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+              >
+                <Send className="h-4 w-4" />
+                Book a Tour
+              </button>
+            </motion.div>
+          </div>
+        </div>
 
         {/* Navigation Controls */}
         <button
@@ -78,75 +150,6 @@ const Hero = () => {
               }`}
             />
           ))}
-        </div>
-      </div>
-
-      {/* Content Section - Below Images */}
-      <div className="flex-1 flex items-center justify-center py-12 px-4">
-        <div className="max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Discover the Magic of{" "}
-              <span className="text-yellow-400">North East India</span>
-            </h1>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-              Experience the untouched beauty, rich culture, and breathtaking landscapes of Meghalaya, Arunachal Pradesh, and Assam with our premium travel services.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap"
-          >
-            {/* Explore Destinations */}
-            <button
-              onClick={() => window.location.href = '/destinations'}
-              className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[200px]"
-            >
-              <MapPinned className="h-5 w-5" />
-              Explore Destinations
-            </button>
-
-            {/* Book a Car */}
-            <button
-              onClick={() => window.location.href = '/services#car-rental'}
-              className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[200px]"
-            >
-              <Car className="h-5 w-5" />
-              Book a Car
-            </button>
-
-            {/* Book a Hotel */}
-            <button
-              onClick={() => window.location.href = '/services#accommodation'}
-              className="bg-purple-600 hover:bg-purple-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[200px]"
-            >
-              <BedDouble className="h-5 w-5" />
-              Book a Hotel
-            </button>
-
-            {/* Book a Tour */}
-            <button
-              onClick={() => window.open(whatsappLink, '_blank')}
-              className="bg-orange-600 hover:bg-orange-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[200px]"
-            >
-              <Send className="h-5 w-5" />
-              Book a Tour
-            </button>
-          </motion.div>
         </div>
       </div>
     </section>
