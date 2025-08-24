@@ -1,18 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { MapPinned, Car, BedDouble, Send } from "lucide-react";
+import { MapPinned, Car, BedDouble, Send, ChevronLeft, ChevronRight } from "lucide-react";
+
+// Import actual destinations data and DestinationCard component
+import { destinationsData } from "@/data/destinationsMaster";
+import DestinationCard from "@/components/page-specific/destinations/DestinationCard";
+
+// Import actual destinations data - replace with your actual import path
+import { destinationsData } from "@/data/destinationsMaster";
+
+// Package Card Component - Remove this entire section since we're using DestinationCard
 
 const Hero = () => {
   // Load 10 images dynamically for the carousel
   const images = Array.from({ length: 10 }, (_, i) => `/images/image${i + 1}.jpg`);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Package carousel state
+  const allPackages = Object.entries(destinationsData).flatMap(([stateKey, destinations]) => 
+    destinations.map(dest => ({ ...dest, stateKey }))
+  );
+  const [packageIndex, setPackageIndex] = useState(0);
+
   // WhatsApp configuration
   const phoneNumber = "8822608900";
   const countryCode = "+91";
   const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}?text=Hello%2C%20I'm%20interested%20in%20booking%20a%20tour.`;
 
-  // Auto-slide every 5 seconds
+  // Auto-slide images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -20,12 +35,32 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Auto-slide packages every 4 seconds (showing 1 at a time)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPackageIndex((prev) => (prev + 1) % allPackages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [allPackages.length]);
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const nextPackages = () => {
+    setPackageIndex((prev) => (prev + 1) % allPackages.length);
+  };
+
+  const prevPackages = () => {
+    setPackageIndex((prev) => (prev - 1 + allPackages.length) % allPackages.length);
+  };
+
+  const getCurrentPackage = () => {
+    return allPackages[packageIndex];
   };
 
   return (
@@ -118,7 +153,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Navigation Controls */}
+        {/* Navigation Controls for Images */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition-all duration-200 backdrop-blur-sm"
@@ -137,7 +172,7 @@ const Hero = () => {
           </svg>
         </button>
 
-        {/* Slide Indicators */}
+        {/* Slide Indicators for Images */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex space-x-2">
           {images.map((_, index) => (
             <button
@@ -150,6 +185,88 @@ const Hero = () => {
               }`}
             />
           ))}
+        </div>
+      </div>
+
+      {/* Package Cards Carousel Section */}
+      <div className="relative bg-white py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Featured <span className="text-blue-600">Travel Packages</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Discover our handpicked destinations and start planning your dream adventure in North East India
+            </p>
+          </motion.div>
+
+          {/* Package Cards Container - Single Card Display */}
+          <div className="relative">
+            <motion.div 
+              className="flex justify-center max-w-sm mx-auto"
+              key={packageIndex}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {getCurrentPackage() && (
+                <DestinationCard 
+                  destination={getCurrentPackage()} 
+                  stateKey={getCurrentPackage().stateKey} 
+                />
+              )}
+            </motion.div>
+
+            {/* Navigation Controls for Packages */}
+            <button
+              onClick={prevPackages}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            
+            <button
+              onClick={nextPackages}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Package Indicators - Updated for single card navigation */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {allPackages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setPackageIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  packageIndex === index
+                    ? 'bg-blue-600 shadow-lg' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* View All Packages Button */}
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <button
+              onClick={() => window.location.href = '/destinations'}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              View All Packages
+            </button>
+          </motion.div>
         </div>
       </div>
     </section>
