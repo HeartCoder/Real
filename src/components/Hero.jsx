@@ -57,9 +57,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+    <section className="relative w-full bg-gradient-to-br from-slate-900 to-slate-800">
       {/* Image Carousel Section with Overlay Content */}
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-[70vh] overflow-hidden">
         {images.map((image, index) => (
           <motion.img
             key={index}
@@ -85,7 +85,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
                 Discover the Magic of{" "}
                 <span className="text-yellow-400">North East India</span>
               </h1>
@@ -96,7 +96,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <p className="text-base md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto">
+              <p className="text-sm md:text-base text-gray-200 mb-6 max-w-2xl mx-auto">
                 Experience the untouched beauty, rich culture, and breathtaking landscapes of Meghalaya, Arunachal Pradesh, and Assam with our premium travel services.
               </p>
             </motion.div>
@@ -110,7 +110,7 @@ const Hero = () => {
               {/* Explore Destinations */}
               <button
                 onClick={() => window.location.href = '/destinations'}
-                className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+                className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[160px]"
               >
                 <MapPinned className="h-4 w-4" />
                 Explore Destinations
@@ -119,7 +119,7 @@ const Hero = () => {
               {/* Book a Car */}
               <button
                 onClick={() => window.location.href = '/services#car-rental'}
-                className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+                className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[160px]"
               >
                 <Car className="h-4 w-4" />
                 Book a Car
@@ -128,7 +128,7 @@ const Hero = () => {
               {/* Book a Hotel */}
               <button
                 onClick={() => window.location.href = '/services#accommodation'}
-                className="bg-purple-600 hover:bg-purple-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+                className="bg-purple-600 hover:bg-purple-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[160px]"
               >
                 <BedDouble className="h-4 w-4" />
                 Book a Hotel
@@ -137,7 +137,7 @@ const Hero = () => {
               {/* Book a Tour */}
               <button
                 onClick={() => window.open(whatsappLink, '_blank')}
-                className="bg-orange-600 hover:bg-orange-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[180px]"
+                className="bg-orange-600 hover:bg-orange-700 text-white w-full sm:w-auto flex items-center justify-center gap-2 shadow-xl rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[160px]"
               >
                 <Send className="h-4 w-4" />
                 Book a Tour
@@ -149,19 +149,19 @@ const Hero = () => {
         {/* Navigation Controls for Images */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition-all duration-200 backdrop-blur-sm"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/80 hover:text-white p-2 transition-all duration-200"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg className="w-8 h-8 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition-all duration-200 backdrop-blur-sm"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/80 hover:text-white p-2 transition-all duration-200"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg className="w-8 h-8 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
@@ -182,18 +182,18 @@ const Hero = () => {
       </div>
 
       {/* Package Cards Carousel Section */}
-      <div className="relative bg-white py-16">
+      <div className="relative bg-white py-8">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
               Featured <span className="text-blue-600">Travel Packages</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-base max-w-2xl mx-auto">
               Discover our handpicked destinations and start planning your dream adventure in North East India
             </p>
           </motion.div>
@@ -218,26 +218,26 @@ const Hero = () => {
             {/* Navigation Controls for Packages */}
             <button
               onClick={prevPackages}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 text-blue-600/70 hover:text-blue-600 p-2 transition-all duration-200 hover:scale-110"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-10 h-10 drop-shadow-lg" strokeWidth={3} />
             </button>
             
             <button
               onClick={nextPackages}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 text-blue-600/70 hover:text-blue-600 p-2 transition-all duration-200 hover:scale-110"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-10 h-10 drop-shadow-lg" strokeWidth={3} />
             </button>
           </div>
 
           {/* Package Indicators - Updated for single card navigation */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 space-x-2">
             {allPackages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setPackageIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   packageIndex === index
                     ? 'bg-blue-600 shadow-lg' 
                     : 'bg-gray-300 hover:bg-gray-400'
@@ -248,14 +248,14 @@ const Hero = () => {
 
           {/* View All Packages Button */}
           <motion.div 
-            className="text-center mt-12"
+            className="text-center mt-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
             <button
               onClick={() => window.location.href = '/destinations'}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2.5 rounded-full font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               View All Packages
             </button>
