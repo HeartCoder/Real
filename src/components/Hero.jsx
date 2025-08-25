@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MapPinned, Car, BedDouble, Send, ChevronLeft, ChevronRight } from "lucide-react";
-
-// Import actual destinations data and DestinationCard component
 import { destinationsData } from "@/data/destinationsMaster";
 import DestinationCard from "@/components/page-specific/destinations/DestinationCard";
-
-// Import actual destinations data - replace with your actual import path
-import { destinationsData } from "@/data/destinationsMaster";
-
-// Package Card Component - Remove this entire section since we're using DestinationCard
 
 const Hero = () => {
   // Load 10 images dynamically for the carousel
