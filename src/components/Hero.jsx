@@ -198,14 +198,15 @@ const Hero = () => {
             </p>
           </motion.div>
 
-          {/* Package Cards Container - Single Card Display */}
-          <div className="relative">
+          {/* Package Cards Container - Single Card Display with Side Transition */}
+          <div className="relative overflow-hidden">
             <motion.div 
               className="flex justify-center max-w-sm mx-auto"
               key={packageIndex}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
             >
               {getCurrentPackage() && (
                 <DestinationCard 
