@@ -18,7 +18,7 @@ const testimonialsData = [
     name: "Priyanka Ghosh",
     location: "Kolkata",
     rating: 5,
-    text: "The car rental service was excellent. The vehicle was clean and well-maintained, and our driver knew all the best spots. Exploring Kaziranga was a dream come true thanks to Namaste North East!",
+    text: "The taxi service was excellent. The vehicle was clean and well-maintained, and our driver knew all the best spots. Exploring Kaziranga was a dream come true thanks to Namaste North East!",
     imagePlaceholder: "woman-smiling"
   },
   {
