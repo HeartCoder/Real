@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const services = [
   {
     id: 1,
-    title: "Car Rental",
+    title: "Taxi Service",
     description: "Choose from our fleet of well-maintained vehicles with experienced drivers who know the region well.",
     icon: <Car className="h-10 w-10 text-primary" />,
     link: "/services#car-rental",
