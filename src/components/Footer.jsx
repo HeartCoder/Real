@@ -38,7 +38,7 @@ const Footer = () => {
               Namaste <span className="text-primary">North East</span>
             </Link>
             <p className="text-sm leading-relaxed mb-4">
-              Your trusted partner for exploring the enchanting landscapes and vibrant cultures of North East India. We offer tailored tours, reliable car rentals, and unforgettable experiences.
+              Your trusted partner for exploring the enchanting landscapes and vibrant cultures of North East India. We offer tailored tours, reliable taxi services, and unforgettable experiences.
             </p>
             <div className="flex space-x-3">
               {socialMedia.map((social) => (
