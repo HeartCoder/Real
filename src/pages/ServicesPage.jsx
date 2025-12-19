@@ -9,10 +9,10 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 
 const servicesData = {
-  "car-rental": {
-    title: "Car Rental Services",
+  "taxi-service": {
+    title: "Taxi Services",
     tagline: "Travel Comfortably and Safely",
-    description: "Explore North East India at your own pace with our reliable car rental services. We offer a diverse fleet of well-maintained vehicles, from comfortable sedans for small groups to spacious SUVs for families and adventurers. All our vehicles come with experienced and courteous drivers who are well-versed with local routes and attractions, ensuring a smooth and enjoyable journey.",
+    description: "Explore North East India at your own pace with our reliable Taxi services. We offer a diverse fleet of well-maintained vehicles, from comfortable sedans for small groups to spacious SUVs for families and adventurers. All our vehicles come with experienced and courteous drivers who are well-versed with local routes and attractions, ensuring a smooth and enjoyable journey.",
     features: [
       "Wide range of vehicles (Sedans, SUVs, Tempo Travellers)",
       "Experienced and professional drivers",
@@ -188,13 +188,13 @@ const ServicesPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-200"
             >
-              Tailored experiences for an unforgettable journey through North East India. From car rentals to complete tour packages, we've got you covered.
+              Tailored experiences for an unforgettable journey through North East India. From Taxi services to complete tour packages, we've got you covered.
             </motion.p>
           </div>
         </div>
       </div>
 
-      <ServiceSection serviceId="car-rental" data={servicesData["car-rental"]} />
+      <ServiceSection serviceId="taxi-service" data={servicesData["taxi-service"]} />
       <div className="border-t border-gray-200"></div>
       <ServiceSection serviceId="tour-packages" data={servicesData["tour-packages"]} />
       <div className="border-t border-gray-200"></div>
