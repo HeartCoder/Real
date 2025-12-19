@@ -47,7 +47,7 @@ const ContactInfo = () => {
     >
       <h2 className="text-3xl font-bold mb-6 text-primary">Get In Touch</h2>
       <p className="text-gray-700 mb-8 leading-relaxed">
-        Have questions or ready to plan your North East adventure? Reach out to us! Our dedicated team is here to assist you with personalized travel plans, car rentals, and any inquiries you might have.
+        Have questions or ready to plan your North East adventure? Reach out to us! Our dedicated team is here to assist you with personalized travel plans, taxi services, and any inquiries you might have.
       </p>
       <div className="space-y-6">
         {contactDetails.map((detail, index) => (
