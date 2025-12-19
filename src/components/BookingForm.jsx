@@ -138,7 +138,7 @@ Notes: ${formData.notes || "N/A"}`;
               className="w-full border rounded px-3 py-2"
             >
               <option value="">Select service</option>
-              <option value="Car Rental">Car Rental</option>
+              <option value="Taxi Service">Taxi Service</option>
               <option value="Guided Tour">Guided Tour</option>
               <option value="Group Package">Group Package</option>
               <option value="Photography Tour">Photography Tour</option>
