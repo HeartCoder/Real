@@ -86,7 +86,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                Discover the Magic of{" "}
+                Best Tours and Travel Agency in {" "}
                 <span className="text-yellow-400">North East India</span>
               </h1>
             </motion.div>
@@ -97,8 +97,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <p className="text-sm md:text-base text-gray-200 mb-6 max-w-2xl mx-auto">
-                Experience the untouched beauty, rich culture, and breathtaking landscapes of Meghalaya, Arunachal Pradesh, and Assam with our premium travel services.
-              </p>
+                Namaste North East Tours & Travels is one of the best tours and travels agencies in Guwahati, providing reliable taxi services, Guwahati–Shillong cabs, airport transfers, and customized North East India tour packages. We cover Assam, Meghalaya, Arunachal Pradesh, and nearby destinations with professional drivers, clean vehicles, and affordable pricing.   </p>
             </motion.div>
 
             <motion.div
