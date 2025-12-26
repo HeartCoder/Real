@@ -11,17 +11,18 @@ const ContactMap = () => {
           </p>
         </div>
         <div className="rounded-lg overflow-hidden shadow-lg h-[400px] md:h-[500px]">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=91.6662653%2C26.1474477%2C91.6862653%2C26.1674477&amp;layer=mapnik&amp;marker=26.1574477,91.6762653"
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-            title="Namaste North East Office Location - Jalukbari, Guwahati"
-          ></iframe>
+         <iframe
+  src="https://www.openstreetmap.org/export/embed.html?bbox=91.65375%2C26.1567222%2C91.67375%2C26.1767222&layer=mapnik&marker=26.1667222,91.66375"
+  width="100%"
+  height="100%"
+  frameBorder="0"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  aria-hidden="false"
+  tabIndex="0"
+  title="Namaste North East Office Location - Jalukbari, Guwahati"
+></iframe>
+
         </div>
       </div>
     </section>
